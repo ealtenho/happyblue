@@ -56,10 +56,32 @@
 
 }
 
-#mainExercisesButton {
+#exerciseHomeButton {
 background-image: url(exercises.png);
 background-size: 50px;
-background-repeat: no-repeat; margin-left: 70px;
+background-repeat: no-repeat;
+margin-left: 70px;
+}
+
+#sendHomeButton {
+background-image: url(036.png);
+background-size: 50px;
+background-repeat: no-repeat;
+margin-left: 70px;
+}
+
+#exerciseChooseButton {
+background-image: url(icon.png);
+background-size: 50px;
+background-repeat: no-repeat;
+margin-left: 70px;
+}
+
+#playChooseButton {
+background-image: url(Untitled.png);
+background-size: 50px;
+background-repeat: no-repeat;
+margin-left: 70px;
 }
 
 #settingsButton {
@@ -75,5 +97,22 @@ background-image: url(024.png);
 background-size: 36px;
 background-repeat: no-repeat;
 margin-left: 20px;
+background-position:center;
+}
+
+.shortcutHeader {
+  padding-top: -5px;
+  height: 36px;
+  width: 15%;
+  z-index: 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+#homeButton {
+background-image: url(001.png);
+background-size: 36px;
+background-repeat: no-repeat;
+margin-left: 280px;
 background-position:center;
 }
