@@ -22,12 +22,11 @@ h1{
 }
 
 .descriptionCloud {
-  margin: 0 auto;
+  margin-top: -20px;
   height: 200px;
   background-image: url("cloud.png");
   background-size: 280px;
   background-repeat: no-repeat;
-  background-position: center;
 }
 
 .descriptionText {
@@ -146,4 +145,11 @@ background-repeat: no-repeat;
 
 #headerText {
   text-align: center;
+}
+
+#icon1 {
+  width: 50px;
+  background-image: url(icon1.png);
+  background-size: 50px;
+  background-repeat: no-repeat;
 }
