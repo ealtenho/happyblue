@@ -5,18 +5,25 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Happy Blue</title>
+		<link rel="apple-touch-icon" href="logo.png"/>
 		<link rel="stylesheet" href="themes/happyblue.min.css" />
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
 		<link rel="stylesheet" href="happy.css" />
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script src="staystandalone.js"></script>
+
 	</head>
 	<body>
 		<!--- This is the Home Page -->
 		<div data-role="page" data-theme="a" id="home">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
+			<div data-role="header" data-position="fixed">
+				<h1 style="margin-top: 14px;">Happy Blue</h1>
 			</div>
 
 			<div data-role="content" data-theme="a">
@@ -32,7 +39,7 @@
 			<a href="#guided" data-role="button">Guided De-stress</a>
 
 
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
 
 			<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
@@ -42,9 +49,12 @@
 
 		<!--- This is the Guided Destress Page -->
 		<div data-role="page" data-theme="a" id="guided">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
-				<div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div>
+			<div data-role="header" data-position="fixed">
+				<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText" style="white-space:nowrap">Guided De-Stress</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
 			</div>
 
 			<div data-role="content" data-theme="a">
@@ -53,20 +63,24 @@
 					<p class="descriptionText"> This is our description information </p>
 				</div>
 
-				<div class="shortcut" id="exerciseChooseButton"><a href="#exercises"><span class="shortcutSpan" >Do Exercise</span></a></div>
+				<div class="shortcut" id="exerciseChooseButton">
+					<a href="#breathe"><span class="shortcutSpan">Do Exercise</span></a>
+				</div>
 
-				<div class="shortcut" id="playChooseButton"><a href="#send"><span class="shortcutSpan" >Play Game</span></a></div>
+				<div class="shortcut" id="playChooseButton">
+					<a href="#play"><span class="shortcutSpan" >Play Game</span></a>
+				</div>
+
 				<a href="#reflect" data-role="button">Skip To Reflection</a>
 
 			</div>
 
-			</div>
-
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 						<ul>
-							<li><a href="#journal">Journal</a></li>
-							<li><a href="#settings">Settings</a></li>
+							<li><a href="#" class="current">1. Choose</a></li>
+							<li><a href="#breathe">2. Relax</a></li>
+							<li><a href="#reflect">3. Reflect</a></li>
 					 </ul>
 				</div>
 			</div>
@@ -74,8 +88,13 @@
 
 		<!--- This is the Breathe -->
 		<div data-role="page" data-theme="a" id="breathe">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
+
+			<div data-role="header" data-position="fixed">
+				<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#guided"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Breathe</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
 			</div>
 
 			<div data-role="content" data-theme="a">
@@ -85,21 +104,28 @@
 
 			</div>
 
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 						<ul>
-							<li><a href="#journal">Journal</a></li>
-							<li><a href="#settings">Settings</a></li>
+							<li><a href="#guided">1. Choose</a></li>
+							<li><a href="#" class="current">2. Relax</a></li>
+							<li><a href="#reflect">3. Reflect</a></li>
 					 </ul>
 				</div>
 			</div>
+
 		</div>
 
 		<!--- This is the Play Page -->
 		<div data-role="page" data-theme="a" id="play">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
-			</div>
+			<div data-role="header" data-position="fixed">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#guided"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Play</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
+
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
@@ -108,21 +134,27 @@
 
 			</div>
 
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 						<ul>
-							<li><a href="#journal">Journal</a></li>
-							<li><a href="#settings">Settings</a></li>
+							<li><a href="#guided">1. Choose</a></li>
+							<li class="current"><a href="#" class="current">2. Relax</a></li>
+							<li><a href="#reflect">3. Reflect</a></li>
 					 </ul>
 				</div>
 			</div>
+
 		</div>
 
 		<!--- This is the Reflect Page -->
 		<div data-role="page" data-theme="a" id="reflect">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
-			</div>
+			<div data-role="header" data-position="fixed">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#breathe"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Reflect</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
@@ -131,11 +163,12 @@
 
 			</div>
 
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 						<ul>
-							<li><a href="#journal">Journal</a></li>
-							<li><a href="#settings">Settings</a></li>
+							<li><a href="#guided">1. Choose</a></li>
+							<li><a href="#breathe">2. Relax</a></li>
+							<li><a href="#" class="current">3. Reflect</a></li>
 					 </ul>
 				</div>
 			</div>
@@ -143,9 +176,13 @@
 
 		<!--- This is the Reflect Edit Page -->
 		<div data-role="page" data-theme="a" id="reflectEdit">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
-			</div>
+			<div data-role="header" data-position="fixed">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#reflect"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Reflect</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
@@ -154,7 +191,7 @@
 
 			</div>
 
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 						<ul>
 							<li><a href="#journal">Journal</a></li>
@@ -166,9 +203,13 @@
 
 		<!--- This is the Send Page -->
 		<div data-role="page" data-theme="a" id="send">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
-			</div>
+			<div data-role="header" data-position="fixed">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Send</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
@@ -176,8 +217,8 @@
 				</div>
 
 			</div>
-				
-			<div data-role="footer">
+
+			<div data-role="footer" data-position="fixed">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
 
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
@@ -185,14 +226,18 @@
 		</div>
 
 
-			
+
 		</div>
 
 		<!--- This is the Exercises Page -->
 		<div data-role="page" data-theme="a" id="exercises">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
-			</div>
+			<div data-role="header" data-position="fixed">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Exercises</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
@@ -201,16 +246,20 @@
 
 			</div>
 
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
 		</div>
 
 		<!--- This is the journal Page -->
 		<div data-role="page" data-theme="a" id="journal">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
-			</div>
+			<div data-role="header" data-position="fixed">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home" data-rel="back"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Journal</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
@@ -219,7 +268,7 @@
 
 			</div>
 
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
@@ -227,9 +276,13 @@
 
 		<!--- This is the Write Entry Page -->
 		<div data-role="page" data-theme="a" id="write">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
-			</div>
+			<div data-role="header" data-position="fixed">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#journal"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Write</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
@@ -238,7 +291,7 @@
 
 			</div>
 
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
 
@@ -246,9 +299,13 @@
 
 		<!--- This is the Journal Entry Page -->
 		<div data-role="page" data-theme="a" id="journalEntry">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
-			</div>
+			<div data-role="header" data-position="fixed">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#journal"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Journal</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
@@ -257,7 +314,7 @@
 
 			</div>
 
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
 
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
@@ -269,9 +326,13 @@
 
 		<!--- This is the Settings Page -->
 		<div data-role="page" data-theme="a" id="settings">
-			<div data-role="header" data-position="inline">
-				<h1>Happy Blue</h1>
-			</div>
+			<div data-role="header" data-position="fixed">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home" data-rel="back"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Settings</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
@@ -280,14 +341,10 @@
 
 			</div>
 
-			<div data-role="footer">
-				<div data-role="navbar">
-						<ul>
-							<li><a href="#journal">Journal</a></li>
-							<li><a href="#settings">Settings</a></li>
-					 </ul>
-				</div>
+			<div data-role="footer" data-position="fixed">
+				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
 			</div>
+
 		</div>
 
 
