@@ -80,12 +80,12 @@ function sendMail() {
               alert("Please correct the highlighted errors.");
               if(address == "" || address == "Recipient Email Address")
               {
-                $('input[name=email]', '.email').addClass("ui-focus");
+                $('input[name=email]', '.email').addClass("errorDisplay");
               }
 
               if(message == "Choose message...")
               {
-                $('.ui-select').addClass("ui-focus");
+                $('.ui-select').addClass("errorDisplay");
               }
             }
   }
