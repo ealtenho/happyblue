@@ -17,6 +17,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <script src="staystandalone.js"></script>
+    <script src="send.js"></script>
+    <script src="activitiesLists.js"></script>
 
 	</head>
 	<body>
@@ -32,9 +34,9 @@
 				</div>
 			</div>
 
-			<div class="shortcut" id="exerciseHomeButton"><a href="#exercises"><span class="shortcutSpan" >Do Exercise</span></a></div>
+			<div class="shortcut" id="exerciseHomeButton"><a href="#exercises1"><span class="shortcutSpan" >Do Exercise</span></a></div>
 
-			<div class="shortcut" id="sendHomeButton"><a href="#send"><span class="shortcutSpan" >Send</span></a></div>
+			<div class="shortcut" id="sendHomeButton"><a href="#send"><span class="shortcutSpan" >Send Note</span></a></div>
 
 			<a href="#guided" data-role="button">Guided De-stress</a>
 
@@ -211,6 +213,23 @@
 			</div><!-- /grid-b -->
 			</div>
 
+		<!-- 	<div id="infoDiv" data-role="popup">
+								<div data-role="header" data-position="inline">
+									<h1 style="margin-top:7px">Email Needed</h1>
+								</div>
+								<div data-role="content" data-theme="a">
+
+										<p>You have not told HappyBlue your email address. You can store your email once to allow you to easily send messages in the future. Please enter your address. You can change this address in the "Settings" page.</p>
+
+								</div>
+								   <div id = "userEmail">
+									<input style="" type="email" name="userEmail" id="email" value="Recipient Email Address" />
+								</div>
+
+									<div data-role="navbar">
+										<a href="javascript:popupEmail()" data-role="button" data-transition="pop" data-direction="reverse" style="margin: 20px; background-color: #2271D8; color: #ffffff; box-shadow:;">Submit.</a>
+									</div>
+			</div> -->
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
@@ -218,11 +237,11 @@
 				</div>
 
 				<div class="email">
-				<input style="" type="email" name="email" id="email" value="Recipient Email Address" />
+				<input style="" type="email" name="email" id="email" value="Recipient Email Address" onclick="this.value='';" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }" />
 			</div>
 
 				<div data-role="fieldcontain">
-					<select data-native-menu=false>
+					<select data-native-menu=false id="message">
 						<option value="0">Choose message...</option>
 						<option value="1">You are a star!</option>
 						<option value="2">Thinking of you!</option>
@@ -230,12 +249,14 @@
 						<option value="4">Want to hang out?</option>
 						<option value="5">Thank you for being a great friend!</option>
 					</select>
-					<textarea style="margin-top:-10px !important" name="writeown" id="writeown">Or Write Your Own.</textarea>
+					<textarea style="margin-top:-10px !important" name="writeown" id="writeown"  onclick="this.value='';" onblur="if(this.value== ''){ this.value='Or Write Your Own'; }">Or Write Your Own.</textarea>
 
 				<div class="ui-grid-b" style="margin-right: 20px; margin-top: 10px">
-					<div class="ui-block-a"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" /><img  src="icon1.png" height="50px" width="50px" style="padding-left:50px;"></div>
-					<div class="ui-block-b" id="headerText"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" /><img src="icon2.png" height="50px" width="50px" style="padding-left:50px;"></div>
-					<div class="ui-block-c"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-3" value="choice-3" /><img src="icon3.png" height="50px" width="50px" style="padding-left:50px;"></div>
+					<div id = "iconChoice">
+					<div class="ui-block-a"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-1" value="1" checked="checked" /><img  src="icon1.png" height="50px" width="50px" style="padding-left:35px;"></div>
+					<div class="ui-block-b" id="headerText"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-2" value="2" /><img src="icon2.png" height="50px" width="50px" style="padding-left:35px;"></div>
+					<div class="ui-block-c"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-3" value="3" /><img src="icon3.png" height="50px" width="50px" style="padding-left:35px;"></div>
+				</div>
 				</div>
 
 			</div>
@@ -245,7 +266,7 @@
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="ui-grid-b">
 					<div class="ui-block-a"><div class="shortcutFooter" id="journalButtonBlock"><a href="#journal"><span class="shortcutSpan"></span></a></div></div>
-					<div class="ui-block-b" id="headerText"><a href="javascript:sendMessage()" data-role="button">Send</a></div>
+					<div class="ui-block-b" id="headerText"><a href="javascript:sendMail()" data-role="button">Send</a></div>
 					<div class="ui-block-c"><div class="shortcutFooter" id="settingsButtonBlock"><a href="#settings"><span class="shortcutSpan" ></span></a></div></div>
 			</div><!-- /grid-b -->
 
@@ -258,8 +279,8 @@
 
 		</div>
 
-		<!--- This is the Exercises Page -->
-		<div data-role="page" data-theme="a" id="exercises">
+		<!--- This is the Exercises (MIND) Page -->
+		<div data-role="page" data-theme="a" id="exercises1">
 			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
 			<div class="ui-grid-b" style="margin-top: 30px;">
 					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
@@ -275,8 +296,50 @@
 
 			</div>
 
-			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
-				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
+			<div id="mindExercises">
+				<ul data-role="listview" id="bodyExercisesFill">
+				</ul>
+			</div>
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+						<ul>
+							<li><a href="#" class="current">Mind</a></li>
+							<li><a href="#exercises2">Body</a></li>
+					 </ul>
+				</div>
+			</div>
+		</div>
+
+		<!--- This is the Exercises (Body) Page -->
+		<div data-role="page" data-theme="a" id="exercises2">
+			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Exercises</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
+
+			<div data-role="content" data-theme="a">
+				<div class="descriptionCloud">
+					<p class="descriptionText"> This is our description information </p>
+				</div>
+
+			</div>
+
+			<div id="mindExercises">
+				<ul data-role="listview" id="mindExercisesFill">
+				</ul>
+			</div>
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+						<ul>
+							<li><a href="#exercises1">Mind</a></li>
+							<li><a href="#" class="current">Body</a></li>
+					 </ul>
+				</div>
 			</div>
 		</div>
 
@@ -376,7 +439,10 @@
 
 		</div>
 
-
+		<script>
+			fillList("mindExercisesFill");
+			fillList("bodyExercisesFill");
+		</script>
 
 	</body>
 </html>

@@ -5,6 +5,13 @@
   background-position: 90% 50%;
 }
 
+.ui-icon-happy-chevron {
+  background-image: url("chevron.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: 95% 45%;
+}
+
 h1{
   margin-top: 14px !important;
 }
