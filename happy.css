@@ -63,13 +63,14 @@ h1{
   vertical-align: top;
   position: relative;
   height: 35px;
-
   width: 15%;
   z-index: 0;
   font-size: 24px;
   text-align: center;
 
 }
+
+
 
 .shortcutSpan {
   position:absolute;
@@ -79,6 +80,7 @@ h1{
   left: 0;
   /* edit: added z-index */
   z-index: 1;
+  
 
 }
 
@@ -119,6 +121,19 @@ margin-left: 210px;
 background-position:center;
 }
 
+#sendButton {
+margin: 0px auto 0px auto;
+float:left;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 10;
+
+}
+
+
 #journalButton {
 background-image: url(024.png);
 background-size: 25px;
@@ -135,6 +150,7 @@ background-position:center;
   text-align: center;
   display: inline-block;
 }
+
 
 #homeButton {
 width : 36px;
@@ -155,7 +171,7 @@ background-repeat: no-repeat;
 #journalButtonBlock {
 width: 36px;
 background-image: url(024.png);
-background-size: 36px;
+background-size: 25px;
 background-repeat: no-repeat;
 float: left;
 }
@@ -163,7 +179,7 @@ float: left;
 #settingsButtonBlock {
 width: 36px;
 background-image: url(025.png);
-background-size: 36px;
+background-size: 25px;
 background-repeat: no-repeat;
 float: right;
 }
