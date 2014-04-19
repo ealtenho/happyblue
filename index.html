@@ -23,30 +23,30 @@
 	</head>
 	<body>
 		<!--- This is the Home Page -->
-        
-   
+
+
 		<div data-role="page" data-theme="a" id="home">
-     
+
 			<div id="header" data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
             <h1><img src="logobanner.png" width="100%" height="auto"></h1>
 				<!--<h1 style="margin-top: 14px;"><img src="logodraft.png" width="100%" height="auto"></h1>-->
 			</div>
 
 			<div data-role="content" data-theme="a">
-				<div class="descriptionCloud">
-					<p class="descriptionText">Here are positive psychology activities designed to make you a happy Wellesley blue!</p>
-				</div>
+						<div class="descriptionCloud">
+							<p class="descriptionText">Here are positive psychology activities designed to make you a happy Wellesley blue!</p>
+						</div>
+
+						<div class="shortcut" id="exerciseHomeButton"><a href="#exercises1"><span class="shortcutSpan" >Do Exercise</span></a></div>
+
+						<div class="shortcut" id="sendHomeButton"><a href="#send"><span class="shortcutSpan" >Send Note</span></a></div>
+
+						<a href="#guided" data-role="button">Guided De-stress</a>
+
 			</div>
 
-			<div class="shortcut" id="exerciseHomeButton"><a href="#exercises1"><span class="shortcutSpan" >Do Exercise</span></a></div>
-
-			<div class="shortcut" id="sendHomeButton"><a href="#send"><span class="shortcutSpan" >Send Note</span></a></div>
-
-			<a href="#guided" data-role="button">Guided De-stress</a>
 
 
-
-			
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
 
@@ -318,19 +318,16 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 										<option value="3">Thumbs Up</option>
 					 </select>
 
+			<a href="javascript:sendMail()" data-role="button">Send</a>
+
 			</div>
 
-			<!-- ---- -->
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
-            	<div class="shortcutFooter" id="sendButton"><a href="javascript:sendMail()" data-role="button">Send</a></div>
+            	<!-- <div class="shortcutFooter" id="sendButton"><a href="javascript:sendMail()" data-role="button">Send</a></div> -->
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
-                
+
 			</div>
-            
-            <!-- ---- -->
-            
-            
 <!--
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="ui-grid-b">
