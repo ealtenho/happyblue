@@ -29,49 +29,53 @@ function updateEmail() {
 }
 
 function sendMail() {
-    // var sender = localStorage.getItem('userEmail');
-    // if(sender == null)
-    // {
-    //   $("#infoDiv").popup("open");
-    // }
 
-  var address = $('input[name=email]', '.email').val();
+  var send = confirm("Leave the app to send your note via email?");
+  if(send){
+        // var sender = localStorage.getItem('userEmail');
+        // if(sender == null)
+        // {
+        //   $("#infoDiv").popup("open");
+        // }
 
-  var message = $('#message option:selected').text();
+          var address = $('input[name=email]', '.email').val();
 
-  //handle the user's own messages
-  //talk about error handling
+          var message = $('#message option:selected').text();
 
-  var icon = " ";
+          //handle the user's own messages
+          //talk about error handling
 
-  var choice = $('input[name=radio-choice]:checked', '#iconChoice').val();
-  alert (choice);
+          var icon = " ";
 
-  switch(choice)
-  {
-    case "1":
-      icon = "cs.wellesley.edu/~ealtenho/happy/icon1.png";
-      break;
-    case "2":
-      icon = "cs.wellesley.edu/~ealtenho/happy/icon2.png";
-      break;
-    case "3":
-      icon = "cs.wellesley.edu/~ealtenho/happy/icon3.png";
-      break;
-    default:
-      console.log("None selected");
+          var choice = $('input[name=radio-choice]:checked', '#iconChoice').val();
+          alert (choice);
+
+          switch(choice)
+          {
+            case "1":
+              icon = "cs.wellesley.edu/~ealtenho/happy/icon1.png";
+              break;
+            case "2":
+              icon = "cs.wellesley.edu/~ealtenho/happy/icon2.png";
+              break;
+            case "3":
+              icon = "cs.wellesley.edu/~ealtenho/happy/icon3.png";
+              break;
+            default:
+              console.log("None selected");
+          }
+
+            if(address != "" && address != "Recipient Email Address" && message != "Choose..."){
+              var email = "mailto:" + address
+                     + "?cc=" + address
+                     + "&subject=" + escape("Sending You HappyBlue Thoughts")
+                     + "&body=" + message + " - " + icon;
+              window.location.href = email;
+              console.log("Email" + email);
+            }
+            else
+            {
+              alert("Please enter a valid email address.");
+            }
   }
-
-    if(address != "" && address != "Recipient Email Address" && message != "Choose..."){
-      var email = "mailto:" + address
-             + "?cc=" + address
-             + "&subject=" + escape("Sending You HappyBlue Thoughts")
-             + "&body=" + message + " - " + icon;
-      window.location.href = email;
-      console.log("Email" + email);
-    }
-    else
-    {
-      alert("Please enter a valid email address.");
-    }
 }
