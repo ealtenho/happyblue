@@ -197,3 +197,15 @@ div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset
   outline-width:1px;
   outline-style:auto;
 }
+
+.errorDisplayButton {
+  -webkit-box-shadow:0 0 12px #E8730C ;
+  -moz-box-shadow:0 0 12px #E8730C ;
+  box-shadow:0 0 12px #E8730C;
+  filter:Alpha(Opacity=50);
+  opacity:.7;
+  cursor:default !important;
+  pointer-events:none;
+  outline-width:0px;
+  outline-style:auto;
+}

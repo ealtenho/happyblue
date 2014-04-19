@@ -265,30 +265,52 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					<p class="descriptionText"> Friendship and gratitude increase happiness! Choose or write a note that includes text and an icon. </p>
 				</div>
 
-				<div class="email">
-				<input style="" type="email" name="email" id="email" value="Recipient Email Address" onclick="this.value='';" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }" />
-			</div>
+				<div class="email" onclick="console.log('click'); $('#email').removeClass('errorDisplay'); this.value=''" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }">
+						<input style="" type="email" name="email" id="email" value="Recipient Email Address" onclick="console.log('click'); this.value=''; $('#email').removeClass('errorDisplay');" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }" />
+			  </div>
 
-				<div data-role="fieldcontain">
-					<select data-native-menu=false id="message">
-						<option value="0">Choose message...</option>
-						<option value="1">You are a star!</option>
-						<option value="2">Thinking of you!</option>
-						<option value="3">Wellesley women can do anything, but they don't have to do everything.</option>
-						<option value="4">Want to hang out?</option>
-						<option value="5">Thank you for being a great friend!</option>
-					</select>
-					<textarea style="margin-top:-10px !important" name="writeown" id="writeown"  onclick="this.value='';" onblur="if(this.value== ''){ this.value='Or Write Your Own'; }">Or Write Your Own.</textarea>
+				<div data-role="fieldcontain" onclick="console.log('click'); this.value=''; $('#message-button').removeClass('errorDisplayButton');" >
+							<select data-native-menu=false id="message">
+										<option value="0">Choose message...</option>
+										<option value="1">You are a star!</option>
+										<option value="2">Thinking of you!</option>
+										<option value="3">Wellesley women can do anything, but they don't have to do everything.</option>
+										<option value="4">Want to hang out?</option>
+										<option value="5">Thank you for being a great friend!</option>
+							</select>
 
-				<div class="ui-grid-b" style="margin-right: 20px; margin-top: 10px">
-					<div id = "iconChoice">
-					<div class="ui-block-a"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-1" value="1" checked="checked" /><img  src="icon1.png" height="50px" width="50px" style="padding-left:35px;"></div>
-					<div class="ui-block-b" id="headerText"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-2" value="2" /><img src="icon2.png" height="50px" width="50px" style="padding-left:35px;"></div>
-					<div class="ui-block-c"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-3" value="3" /><img src="icon3.png" height="50px" width="50px" style="padding-left:35px;"></div>
+						<textarea style="margin-top:-10px !important" name="writeown" id="writeown"  onclick="this.value='';" onblur="if(this.value== ''){ this.value='Or Write Your Own'; }">Or Write Your Own.</textarea>
 				</div>
-				</div>
+					<!-- Implementing this as a dropdown with checkbox? -->
+					<!-- <input type="checkbox" name="checkbox" id="checkbox" class="custom" />
+							<label for="checkbox">Include Icon?</label>
 
-			</div>
+
+							<div  id="iconSelect" data-role="collapsible-set" data-theme="c" data-content-theme="d">
+								<div id="iconSelect" data-role="collapsible">
+										<div class="ui-grid-b" style="margin-right: 20px; margin-top: 10px">
+												<div id = "iconChoice">
+													  <h3>Collapsible</h3>
+
+											  </div>
+									  </div>
+								</div>
+							</div>
+					 -->
+						<!-- <div data-role="collapsible">
+										<h3>Include Icon?</h3>
+										<div class="ui-block-a"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-1" value="1" checked="checked" /><img  src="icon1.png" height="50px" width="50px" style="padding-left:35px;"></div>
+										<div class="ui-block-b" id="headerText"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-2" value="2" /><img src="icon2.png" height="50px" width="50px" style="padding-left:35px;"></div>
+										<div class="ui-block-c"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-3" value="3" /><img src="icon3.png" height="50px" width="50px" style="padding-left:35px;"></div>
+
+						</div> -->
+
+						<select data-native-menu=false id="icon">
+										<option value="0">Include an icon?</option>
+										<option value="1">Heart</option>
+										<option value="2">Star</option>
+										<option value="3">Thumbs Up</option>
+					 </select>
 
 			</div>
 

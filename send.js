@@ -1,3 +1,5 @@
+
+
 function clearBox(){
   console.log($('input[name=userEmail]', '#userEmail').val());
   $('input[name=userEmail]', '#userEmail').val(" ");
@@ -50,18 +52,20 @@ function sendMail() {
 
           var icon = " ";
 
-          var choice = $('input[name=radio-choice]:checked', '#iconChoice').val();
+          //var choice = $('input[name=radio-choice]:checked', '#iconChoice').val();
+          var choice = $('#icon option:selected').text();
+          console.log(choice);
 
           switch(choice)
           {
-            case "1":
-              icon = "cs.wellesley.edu/~ealtenho/happy/icon1.png";
+            case "Heart":
+              icon = " - cs.wellesley.edu/~ealtenho/happy/icon1.png";
               break;
-            case "2":
-              icon = "cs.wellesley.edu/~ealtenho/happy/icon2.png";
+            case "Star":
+              icon = " - cs.wellesley.edu/~ealtenho/happy/icon2.png";
               break;
-            case "3":
-              icon = "cs.wellesley.edu/~ealtenho/happy/icon3.png";
+            case "Thumbs Up":
+              icon = " - cs.wellesley.edu/~ealtenho/happy/icon3.png";
               break;
             default:
               console.log("None selected");
@@ -71,7 +75,7 @@ function sendMail() {
               var email = "mailto:" + address
                      + "?cc=" + address
                      + "&subject=" + escape("Sending You HappyBlue Thoughts")
-                     + "&body=" + message + " - " + icon;
+                     + "&body=" + message + icon;
               window.location.href = email;
               console.log("Email" + email);
             }
@@ -85,8 +89,11 @@ function sendMail() {
 
               if(message == "Choose message...")
               {
-                $('.ui-select').addClass("errorDisplay");
+                $('#message-button').addClass("errorDisplayButton");
               }
             }
   }
 }
+
+
+
