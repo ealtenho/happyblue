@@ -22,7 +22,7 @@
 	<body>
 		<!--- This is the Home Page -->
 		<div data-role="page" data-theme="a" id="home">
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
 				<h1 style="margin-top: 14px;">Happy Blue</h1>
 			</div>
 
@@ -39,7 +39,7 @@
 			<a href="#guided" data-role="button">Guided De-stress</a>
 
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
 
 			<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
@@ -49,7 +49,7 @@
 
 		<!--- This is the Guided Destress Page -->
 		<div data-role="page" data-theme="a" id="guided">
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="ui-grid-b" style="margin-top: 30px;">
 					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
 					<div class="ui-block-b" id="headerText" style="white-space:nowrap">Guided De-Stress</div>
@@ -75,7 +75,7 @@
 
 			</div>
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div data-role="navbar">
 						<ul>
 							<li><a href="#" class="current">1. Choose</a></li>
@@ -203,7 +203,7 @@
 
 		<!--- This is the Send Page -->
 		<div data-role="page" data-theme="a" id="send">
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" data-id="persistent-header" style="background-image: url(backdrop.png)">
 			<div class="ui-grid-b" style="margin-top: 30px;">
 					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
 					<div class="ui-block-b" id="headerText">Send</div>
@@ -217,7 +217,9 @@
 					<p class="descriptionText"> This is our description information </p>
 				</div>
 
-				<input type="email" name="email" id="email" value="Recipient Email Address" />
+				<div class="email">
+				<input style="" type="email" name="email" id="email" value="Recipient Email Address" />
+			</div>
 
 				<div data-role="fieldcontain">
 					<select data-native-menu=false>
@@ -227,23 +229,28 @@
 						<option value="3">Wellesley women can do anything, but they don't have to do everything.</option>
 						<option value="4">Want to hang out?</option>
 						<option value="5">Thank you for being a great friend!</option>
-						<textarea name="writeown" id="writeown">Or Write Your Own.</textarea>
 					</select>
+					<textarea style="margin-top:-10px !important" name="writeown" id="writeown">Or Write Your Own.</textarea>
 
 				<div class="ui-grid-b" style="margin-right: 20px; margin-top: 10px">
-					<div class="ui-block-a"><input style="margin-top: 10px;" type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" /><img  src="icon1.png" height="50px" width="50px"></div>
-					<div class="ui-block-b" id="headerText"><input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" /><img src="icon2.png" height="50px" width="50px"></div>
-					<div class="ui-block-c"><input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3" /><img src="icon3.png" height="50px" width="50px"></div>
+					<div class="ui-block-a"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" /><img  src="icon1.png" height="50px" width="50px" style="padding-left:50px;"></div>
+					<div class="ui-block-b" id="headerText"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" /><img src="icon2.png" height="50px" width="50px" style="padding-left:50px;"></div>
+					<div class="ui-block-c"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-3" value="choice-3" /><img src="icon3.png" height="50px" width="50px" style="padding-left:50px;"></div>
 				</div>
 
 			</div>
 
 			</div>
 
-			<div data-role="footer" data-position="fixed">
-				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
+			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
+				<div class="ui-grid-b">
+					<div class="ui-block-a"><div class="shortcutFooter" id="journalButtonBlock"><a href="#journal"><span class="shortcutSpan"></span></a></div></div>
+					<div class="ui-block-b" id="headerText"><a href="javascript:sendMessage()" data-role="button">Send</a></div>
+					<div class="ui-block-c"><div class="shortcutFooter" id="settingsButtonBlock"><a href="#settings"><span class="shortcutSpan" ></span></a></div></div>
+			</div><!-- /grid-b -->
 
-				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
+
+
 			</div>
 		</div>
 
@@ -253,7 +260,7 @@
 
 		<!--- This is the Exercises Page -->
 		<div data-role="page" data-theme="a" id="exercises">
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
 			<div class="ui-grid-b" style="margin-top: 30px;">
 					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
 					<div class="ui-block-b" id="headerText">Exercises</div>
@@ -268,14 +275,14 @@
 
 			</div>
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
 		</div>
 
 		<!--- This is the journal Page -->
 		<div data-role="page" data-theme="a" id="journal">
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
 			<div class="ui-grid-b" style="margin-top: 30px;">
 					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home" data-rel="back"><span class="shortcutSpan" ></span></a></div></div>
 					<div class="ui-block-b" id="headerText">Journal</div>
@@ -290,7 +297,7 @@
 
 			</div>
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
@@ -298,7 +305,7 @@
 
 		<!--- This is the Write Entry Page -->
 		<div data-role="page" data-theme="a" id="write">
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
 			<div class="ui-grid-b" style="margin-top: 30px;">
 					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#journal"><span class="shortcutSpan" ></span></a></div></div>
 					<div class="ui-block-b" id="headerText">Write</div>
@@ -313,7 +320,7 @@
 
 			</div>
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
 
@@ -321,7 +328,7 @@
 
 		<!--- This is the Journal Entry Page -->
 		<div data-role="page" data-theme="a" id="journalEntry">
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
 			<div class="ui-grid-b" style="margin-top: 30px;">
 					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#journal"><span class="shortcutSpan" ></span></a></div></div>
 					<div class="ui-block-b" id="headerText">Journal</div>
@@ -336,7 +343,7 @@
 
 			</div>
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
 
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
@@ -348,7 +355,7 @@
 
 		<!--- This is the Settings Page -->
 		<div data-role="page" data-theme="a" id="settings">
-			<div data-role="header" data-position="fixed">
+			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
 			<div class="ui-grid-b" style="margin-top: 30px;">
 					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home" data-rel="back"><span class="shortcutSpan" ></span></a></div></div>
 					<div class="ui-block-b" id="headerText">Settings</div>
@@ -363,7 +370,7 @@
 
 			</div>
 
-			<div data-role="footer" data-position="fixed">
+			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
 			</div>
 
