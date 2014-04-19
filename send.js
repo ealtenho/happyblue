@@ -41,14 +41,16 @@ function sendMail() {
           var address = $('input[name=email]', '.email').val();
 
           var message = $('#message option:selected').text();
-
-          //handle the user's own messages
-          //talk about error handling
+          var writeOwn = $('#writeown').val();
+          console.log("writeOwn");
+          if(writeOwn != "Or Write Your Own.")
+          {
+            message = writeOwn;
+          }
 
           var icon = " ";
 
           var choice = $('input[name=radio-choice]:checked', '#iconChoice').val();
-          alert (choice);
 
           switch(choice)
           {
@@ -64,8 +66,8 @@ function sendMail() {
             default:
               console.log("None selected");
           }
-
-            if(address != "" && address != "Recipient Email Address" && message != "Choose..."){
+            console.log(message);
+            if(address != "" && address != "Recipient Email Address" && message != "Choose message..."){
               var email = "mailto:" + address
                      + "?cc=" + address
                      + "&subject=" + escape("Sending You HappyBlue Thoughts")
@@ -75,7 +77,16 @@ function sendMail() {
             }
             else
             {
-              alert("Please enter a valid email address.");
+              alert("Please correct the highlighted errors.");
+              if(address == "" || address == "Recipient Email Address")
+              {
+                $('input[name=email]', '.email').addClass("ui-focus");
+              }
+
+              if(message == "Choose message...")
+              {
+                $('.ui-select').addClass("ui-focus");
+              }
             }
   }
 }
