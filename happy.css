@@ -123,6 +123,14 @@ margin-left: 210px;
 background-position:center;
 }
 
+#settingsButtonOnly {
+background-image: url(025.png);
+background-size: 25px;
+background-repeat: no-repeat;
+margin-left: 270px;
+background-position:center;
+}
+
 #sendButton {
 margin: 0px auto 0px auto;
 float:left;
@@ -231,6 +239,14 @@ div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset
   outline-style:auto;
 }
 
-.ui-btn {
-  padding-bottom: 20px;
+.notFullScreen {
+  padding-right:20px;
+  padding-left:20px;
+
+}
+
+.outline {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dddddd;
 }

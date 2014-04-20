@@ -360,12 +360,14 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					<p class="descriptionText"> Try out positivity exercises to improve your mood.</p>
 				</div>
 
+				<div id="mindExercises" class="notFullScreen">
+						<ul data-role="listview" id="mindExercisesFill" class="outline">
+						</ul>
 			</div>
 
-			<div id="mindExercises">
-				<ul data-role="listview" id="mindExercisesFill">
-				</ul>
 			</div>
+
+
 
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
@@ -392,12 +394,14 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					<p class="descriptionText"> Try out positivity exercises to improve your mood. </p>
 				</div>
 
+				<div id="bodyExercises" class="notFullScreen">
+						<ul data-role="listview" id="bodyExercisesFill" class="outline">
+						</ul>
+			  </div>
+
 			</div>
 
-			<div id="bodyExercises">
-				<ul data-role="listview" id="bodyExercisesFill">
-				</ul>
-			</div>
+
 
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
@@ -426,8 +430,8 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 
 				<a href="#write" data-role="button">Write</a>
 				<h2> Scroll Through Past Entries: </h2>
-				<div id="journalEntries">
-					<ul data-role="listview" id="journalEntriesFill">
+				<div id="journalEntries" class="notFullScreen">
+					<ul data-role="listview" id="journalEntriesFill" class="outline">
 					</ul>
 				</div>
 
@@ -435,8 +439,10 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 
-				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
+				<div class="shortcutFooter" id="settingsButtonOnly"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
+
+
 		</div>
 
 		<!--- This is the Write Entry Page -->
@@ -481,7 +487,42 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 				<div class="descriptionCloud">
 					<p class="descriptionText"> Here are your HappyBlue reflections, activities and entries from this date.</p>
 				</div>
+					<h2>Reflections:</h2>
+					<h2>Activities:</h2>
+					<h2>Entries:</h2>
 
+			</div>
+
+			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
+				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
+
+				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
+			</div>
+		</div>
+				</div>
+			</div>
+		</div>
+
+			<!--- This is the activity page -->
+		<div data-role="page" data-theme="a" id="activity">
+			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
+			<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#journal"><span class="shortcutSpan" ></span></a></div></div>
+					<div class="ui-block-b" id="headerText">Exercise</div>
+					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+				</div><!-- /grid-b -->
+				</div>
+
+			<div data-role="content" data-theme="a">
+				<div class="descriptionCloud">
+					<p class="descriptionText"> Don't like this activity? Click to see another. Completed this activity? Click to add it to your journal.</p>
+				</div>
+
+				<a href="#activity" data-role="button">Show Another Similar</a>
+
+				<p> This is the description of the exercise </p>
+
+				<a href="#activity" data-role="button" onclick="javascript:completed()">Completed</a>
 			</div>
 
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
