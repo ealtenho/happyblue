@@ -71,11 +71,13 @@ div.ui-controlgroup-label {
 }
 /* Buttons
 -----------------------------------------------------------------------------------------------------------*/
+
+
 .ui-btn,
 label.ui-btn {
 	font-weight: bold;
 	border-width: 1px;
-	height: 7px;
+/*	height: 7px;*/
 	border-style: solid;
 }
 .ui-btn:link {
@@ -201,7 +203,7 @@ html .ui-alt-icon .ui-radio-off:after {
 	width: 8px;
 	height: 8px;
 	border-width: 5px;
-	border-style: solid; 
+	border-style: solid;
 }
 .ui-alt-icon.ui-btn.ui-radio-on:after,
 .ui-alt-icon .ui-btn.ui-radio-on:after {

@@ -80,7 +80,7 @@ h1{
   left: 0;
   /* edit: added z-index */
   z-index: 1;
-  
+
 
 }
 
@@ -227,4 +227,8 @@ div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset
   pointer-events:none;
   outline-width:0px;
   outline-style:auto;
+}
+
+.ui-btn {
+  padding-bottom: 20px;
 }
