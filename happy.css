@@ -86,17 +86,19 @@ h1{
 
 
 #exerciseHomeButton {
+  width:70px;
 background-image: url(exercises.png);
-background-size: 50px;
+background-size: 60px;
 background-repeat: no-repeat;
-margin-left: 70px;
+margin-left: 50px;
 }
 
 #sendHomeButton {
+  width: 60px;
 background-image: url(036.png);
-background-size: 50px;
+background-size: 60px;
 background-repeat: no-repeat;
-margin-left: 70px;
+margin-left: 50px;
 }
 
 #exerciseChooseButton {
