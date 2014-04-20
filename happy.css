@@ -121,6 +121,14 @@ margin-left: 210px;
 background-position:center;
 }
 
+#settingsButtonOnly {
+background-image: url(025.png);
+background-size: 25px;
+background-repeat: no-repeat;
+margin-left: 270px;
+background-position:center;
+}
+
 #sendButton {
 margin: 0px auto 0px auto;
 float:left;
