@@ -17,6 +17,12 @@ h1{
   margin-top: 10px !important;
 }
 
+h2 {
+  white-space: nowrap;
+  font-size: 20px !important;
+  color: #004990 !important;
+}
+
 .pageHeader {
   margin-top: 14px !important;
 }
@@ -152,6 +158,14 @@ margin-left: 5px;
 background-position:center;
 }
 
+#writeButton {
+background-image: url(027.png);
+background-size: 25px;
+background-repeat: no-repeat;
+margin-left: 5px;
+background-position:center;
+}
+
 .shortcutHeader {
   height: 36px;
   width: 15%;
@@ -210,11 +224,11 @@ float: right;
 }
 
 /** Move up text field **/
-div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset
+/*div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset
 {
   margin-top: -50px;
 }
-
+*/
 .errorDisplay {
   -webkit-box-shadow:0 0 12px #E8730C ;
   -moz-box-shadow:0 0 12px #E8730C ;
@@ -249,4 +263,34 @@ div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset
   border-style: solid;
   border-width: 1px;
   border-color: #dddddd;
+}
+
+.prompt {
+  color: #dddddd;
+}
+
+.blueButton {
+  background-color: #004990 !important;
+  color: #fff !important;
+  text-shadow: 1px 1px #000 !important;
+}
+
+.sendButton {
+  margin-top: 35px;
+}
+
+.journalButton {
+  margin-top: 0px;
+}
+
+.moveUp {
+  margin-top: -50px !important;
+}
+
+.submitButton {
+  margin-top: 50px;
+}
+
+.entry {
+  height:150px !important;
 }

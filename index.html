@@ -22,9 +22,8 @@
 
 	</head>
 	<body>
+
 		<!--- This is the Home Page -->
-
-
 		<div data-role="page" data-theme="a" id="home">
 
 			<div id="header" data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
@@ -41,7 +40,7 @@
 
 						<div class="shortcut" id="sendHomeButton"><a href="#send"><span class="shortcutSpan" ><br><br><br>Send Note</span></a></div>
 
-						<a href="#guided" data-role="button">Guided De-stress</a>
+						<a href="#guided" data-role="button" class="blueButton">Guided De-stress</a>
 
 			</div>
 
@@ -49,8 +48,7 @@
 
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal"><span class="shortcutSpan"></span></a></div>
-
-			<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
+				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
 
 		</div>
@@ -68,8 +66,8 @@
 			<div data-role="content" data-theme="a">
 
 				<div class="descriptionCloud">
-					<p class="descriptionText"> Reflection is an effective
-de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
+						<p class="descriptionText"> Reflection is an effective
+						de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 				</div>
 
 				<div class="shortcut" id="exerciseChooseButton">
@@ -80,7 +78,7 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					<a href="#play"><span class="shortcutSpan" ><br><br><br>Play Game</span></a>
 				</div>
 
-				<a href="#reflect" data-role="button">Skip To Reflection</a>
+				<a href="#reflect" data-role="button" class="blueButton">Skip To Reflection</a>
 
 			</div>
 
@@ -119,6 +117,8 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					<p class="descriptionText"> Take five deep breaths. </p>
 				</div>
 
+				<a href="#reflect" data-role="button" class="blueButton">Next</a>
+
 			</div>
 
 			<!-- <div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
@@ -130,6 +130,8 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					 </ul>
 				</div>
 			</div> -->
+
+
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div data-role="controlgroup" data-type="horizontal" style="margin-left:5%; margin-bottom: 1px; margin-top: 1px;">
 						<a href="#guided" data-role="button" style="width: 70px; border-color: #e1c335 ; background-color: #fff">1. Choose</a>
@@ -154,6 +156,7 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
 					<p class="descriptionText"> Play the game below. </p>
+					<a href="#reflect" data-role="button" class="blueButton">Next</a>
 				</div>
 
 			</div>
@@ -167,6 +170,7 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					 </ul>
 				</div>
 			</div> -->
+
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div data-role="controlgroup" data-type="horizontal" style="margin-left:5%; margin-bottom: 1px; margin-top: 1px;">
 						<a href="#guided" data-role="button" style="width: 70px; border-color: #e1c335 ; background-color: #fff">1. Choose</a>
@@ -179,48 +183,45 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 
 		<!--- This is the Reflect Page -->
 		<div data-role="page" data-theme="a" id="reflect">
-			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
-			<div class="ui-grid-b" style="margin-top: 30px;">
-					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#breathe"><span class="shortcutSpan" ></span></a></div></div>
-					<div class="ui-block-b" id="headerText">Reflect</div>
-					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
-				</div><!-- /grid-b -->
+				<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
+					<div class="ui-grid-b" style="margin-top: 30px;">
+								<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#breathe"><span class="shortcutSpan" ></span></a></div></div>
+								<div class="ui-block-b" id="headerText">Reflect</div>
+								<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+					</div><!-- /grid-b -->
 				</div>
 
 			<div data-role="content" data-theme="a">
-				<div class="descriptionCloud">
-					<p class="descriptionText"> Reflecting on three things you are happy about highlights the good in your life. </p>
+						<div class="descriptionCloud">
+							<p class="descriptionText"> Reflecting on three things you are happy about highlights the good in your life. </p>
+						</div>
+							<div class="moveUp">
+								<select name="reflect1" class="select" data-native-menu=false id="reflect1">
+										<option value="0">1. What Makes You Smile?</option>
+										<option value="1">Puppies!</option>
+										<option value="2">Mustaches :)</option>
+										<option value="3">Bananas</option>
+										<option value="4">Write Your Own</option>
+									</select>
+
+									<select data-native-menu=false id="reflect2">
+										<option value="0">2. Your Favorite Place?</option>
+										<option value="1">Lake Waban</option>
+										<option value="2">The Beach</option>
+										<option value="3">Hawaii</option>
+										<option value="4">Write Your Own</option>
+									</select>
+
+									<select data-native-menu=false id="reflect3">
+										<option value="0">3. You're Thankful For?</option>
+										<option value="1">Friends</option>
+										<option value="2">Chocolate</option>
+										<option value="3">Family</option>
+										<option value="4">Write Your Own</option>
+									</select>
+								</div>
+					<a href="#reflectEdit" data-role="button" class="blueButton submitButton">Submit</a>
 				</div>
-
-				<h2> 1. What Makes You Smile? </h2>
-				<select data-native-menu=false id="reflect1">
-						<option value="0">Select</option>
-						<option value="1">Puppies!</option>
-						<option value="2">Mustaches :)</option>
-						<option value="3">Bananas</option>
-						<option value="4">Write Your Own</option>
-					</select>
-
-					<h2> 2. What is Your Favorite Place? </h2>
-					<select data-native-menu=false id="reflect2">
-						<option value="0">Select</option>
-						<option value="1">Lake Waban</option>
-						<option value="2">The Beach</option>
-						<option value="3">Hawaii</option>
-						<option value="4">Write Your Own</option>
-					</select>
-
-					<h2> 3. One Thing You're Thankful For? </h2>
-					<select data-native-menu=false id="reflect3">
-						<option value="0">Select</option>
-						<option value="1">Friends</option>
-						<option value="2">Chocolate</option>
-						<option value="3">Family</option>
-						<option value="4">Write Your Own</option>
-					</select>
-
-					<a href="#" data-role="button">Submit</a>
-			</div>
 
 			<!-- <div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div data-role="navbar">
@@ -238,6 +239,7 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 						<a href="#breathe" data-role="button" style="width: 70px; border-color: #e1c335; border-left-color: #e1c335; background-color: #fff">2. Relax</a>
 						<a href="#" class="ui-btn-active" data-role="button" style="width: 70px; border-color: #e1c335; border-left-color: #e1c335;">3. Reflect</a>
 				</div>
+			</div>
 
 		</div>
 
@@ -256,56 +258,49 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					<p class="descriptionText"> Feel free to edit your reflections before you submit. </p>
 				</div>
 
+				<div class="moveUp">
+						<h2>1. What Makes You Smile?</h2>
+							<input type="text" id="question1" value="Puppies"/>
+						<h2>2. Your Favorite Place?</h2>
+							<input type="text" id="question2" value="Lake Waban"/>
+						<h2>3. You're Thankful for?</h2>
+							<input type="text" id="question3" value="Family" />
+			 </div>
+
+			 <a href="#" data-role="button" class="blueButton submitButton" onclick="alert('Your journal has been updated');" >Confirm</a>
+
 			</div>
 
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
-				<div data-role="navbar">
-						<ul>
-							<li><a href="#journal">Journal</a></li>
-							<li><a href="#settings">Settings</a></li>
-					 </ul>
+				<div data-role="controlgroup" data-type="horizontal" style="margin-left:5%; margin-bottom: 1px; margin-top: 1px;">
+						<a href="#guided" data-role="button" style="width: 70px; border-color: #e1c335 ;  background-color: #fff">1. Choose</a>
+						<a href="#breathe" data-role="button" style="width: 70px; border-color: #e1c335; border-left-color: #e1c335; background-color: #fff">2. Relax</a>
+						<a href="#" class="ui-btn-active" data-role="button" style="width: 70px; border-color: #e1c335; border-left-color: #e1c335;">3. Reflect</a>
 				</div>
 			</div>
+
 		</div>
 
 		<!--- This is the Send Page -->
 		<div data-role="page" data-theme="a" id="send">
-			<div data-role="header" data-position="fixed" data-id="persistent-header" style="background-image: url(backdrop.png)">
-			<div class="ui-grid-b" style="margin-top: 30px;">
-					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
-					<div class="ui-block-b" id="headerText">Send</div>
-					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
-			</div><!-- /grid-b -->
-			</div>
-
-		<!-- 	<div id="infoDiv" data-role="popup">
-								<div data-role="header" data-position="inline">
-									<h1 style="margin-top:7px">Email Needed</h1>
-								</div>
-								<div data-role="content" data-theme="a">
-
-										<p>You have not told HappyBlue your email address. You can store your email once to allow you to easily send messages in the future. Please enter your address. You can change this address in the "Settings" page.</p>
-
-								</div>
-								   <div id = "userEmail">
-									<input style="" type="email" name="userEmail" id="email" value="Recipient Email Address" />
-								</div>
-
-									<div data-role="navbar">
-										<a href="javascript:popupEmail()" data-role="button" data-transition="pop" data-direction="reverse" style="margin: 20px; background-color: #2271D8; color: #ffffff; box-shadow:;">Submit.</a>
-									</div>
-			</div> -->
+					<div data-role="header" data-position="fixed" data-id="persistent-header" style="background-image: url(backdrop.png)">
+						<div class="ui-grid-b" style="margin-top: 30px;">
+								<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+								<div class="ui-block-b" id="headerText">Send</div>
+								<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+						</div><!-- /grid-b -->
+					</div>
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
 					<p class="descriptionText"> Friendship and gratitude increase happiness! Choose or write a note that includes text and an icon. </p>
 				</div>
 
-				<div class="email" onclick="console.log('click'); $('#email').removeClass('errorDisplay'); this.value=''" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }">
+				<div class="email moveUp" onclick="console.log('click'); $('#email').removeClass('errorDisplay'); this.value=''" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }">
 						<input style="" type="email" name="email" id="email" value="Recipient Email Address" onclick="console.log('click'); this.value=''; $('#email').removeClass('errorDisplay');" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }" />
 			  </div>
 
-				<div data-role="fieldcontain" onclick="console.log('click'); this.value=''; $('#message-button').removeClass('errorDisplayButton');" >
+				<div onclick="console.log('click'); this.value=''; $('#message-button').removeClass('errorDisplayButton');" >
 							<select data-native-menu=false id="message">
 										<option value="0">Choose message...</option>
 										<option value="1">You are a star!</option>
@@ -314,32 +309,7 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 										<option value="4">Want to hang out?</option>
 										<option value="5">Thank you for being a great friend!</option>
 							</select>
-
 						<textarea style="margin-top:-10px !important" name="writeown" id="writeown"  onclick="this.value='';" onblur="if(this.value== ''){ this.value='Or Write Your Own'; }">Or Write Your Own.</textarea>
-				</div>
-					<!-- Implementing this as a dropdown with checkbox? -->
-					<!-- <input type="checkbox" name="checkbox" id="checkbox" class="custom" />
-							<label for="checkbox">Include Icon?</label>
-
-
-							<div  id="iconSelect" data-role="collapsible-set" data-theme="c" data-content-theme="d">
-								<div id="iconSelect" data-role="collapsible">
-										<div class="ui-grid-b" style="margin-right: 20px; margin-top: 10px">
-												<div id = "iconChoice">
-													  <h3>Collapsible</h3>
-
-											  </div>
-									  </div>
-								</div>
-							</div>
-					 -->
-						<!-- <div data-role="collapsible">
-										<h3>Include Icon?</h3>
-										<div class="ui-block-a"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-1" value="1" checked="checked" /><img  src="icon1.png" height="50px" width="50px" style="padding-left:35px;"></div>
-										<div class="ui-block-b" id="headerText"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-2" value="2" /><img src="icon2.png" height="50px" width="50px" style="padding-left:35px;"></div>
-										<div class="ui-block-c"><input style="margin-top: 5px;" type="radio" name="radio-choice" id="radio-choice-3" value="3" /><img src="icon3.png" height="50px" width="50px" style="padding-left:35px;"></div>
-
-						</div> -->
 
 						<select data-native-menu=false id="icon">
 										<option value="0">Include an icon?</option>
@@ -347,8 +317,11 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 										<option value="2">Star</option>
 										<option value="3">Thumbs Up</option>
 					 </select>
+				</div>
 
-			<a href="javascript:sendMail()" data-role="button">Send</a>
+
+
+			<a href="javascript:sendMail()" data-role="button" class="blueButton sendButton">Send</a>
 
 			</div>
 
@@ -368,12 +341,9 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 
 
 
-			</div>
-		</div>
+	</div>
 
 
-
-		</div>
 
 		<!--- This is the Exercises (MIND) Page -->
 		<div data-role="page" data-theme="a" id="exercises1">
@@ -390,7 +360,7 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					<p class="descriptionText"> Try out positivity exercises to improve your mood.</p>
 				</div>
 
-				<div id="mindExercises" class="notFullScreen">
+				<div id="mindExercises" class="moveUp notFullScreen">
 						<ul data-role="listview" id="mindExercisesFill" class="outline">
 						</ul>
 			</div>
@@ -431,7 +401,7 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					<p class="descriptionText"> Try out positivity exercises to improve your mood. </p>
 				</div>
 
-				<div id="bodyExercises" class="notFullScreen">
+				<div id="bodyExercises" class="notFullScreen moveUp">
 						<ul data-role="listview" id="bodyExercisesFill" class="outline">
 						</ul>
 			  </div>
@@ -471,9 +441,9 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 					<p class="descriptionText"> See your growing happiness in this record of your reflections, or write an entry. </p>
 				</div>
 
-				<a href="#write" data-role="button">Write</a>
-				<h2> Scroll Through Past Entries: </h2>
-				<div id="journalEntries" class="notFullScreen">
+				<!-- <a href="#write" data-role="button" class="blueButton journalButton moveUp">Write</a> -->
+				<!-- <h2> Scroll Through Past Entries: </h2> -->
+				<div id="journalEntries" class="notFullScreen moveUp">
 					<ul data-role="listview" id="journalEntriesFill" class="outline">
 					</ul>
 				</div>
@@ -481,8 +451,8 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 			</div>
 
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
-
-				<div class="shortcutFooter" id="settingsButtonOnly"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
+				<div class="shortcutFooter" id="writeButton"><a href="#write"><span class="shortcutSpan" ></span></a></div>
+				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
 
 
@@ -501,38 +471,40 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
 					<p class="descriptionText"> Write whatever you feel like! This is your positivity journal. </p>
-
-					<textarea style="margin-top:-10px !important" name="writeown" id="writeown"  onclick="this.value='';" onblur="if(this.value== ''){ this.value='Or Write Your Own'; }">What are you happy about?</textarea>
-
-					<a href="#" data-role="button">Submit</a>
-
 				</div>
+					<textarea  onclick="this.value='';" onblur="if(this.value== ''){ this.value='What are you happy about?'; }" class="entry moveUp">What are you happy about?</textarea>
+
+
+					<a href="#" data-role="button" class="blueButton submitButton">Submit</a>
+
+
 
 			</div>
 
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
-				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
+				<div class="shortcutFooter" id="settingsButtonOnly"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
 
 		</div>
 
 		<!--- This is the Journal Entry Page -->
 		<div data-role="page" data-theme="a" id="journalEntry">
-			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
-			<div class="ui-grid-b" style="margin-top: 30px;">
-					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#journal"><span class="shortcutSpan" ></span></a></div></div>
-					<div class="ui-block-b" id="headerText">Journal</div>
-					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
-				</div><!-- /grid-b -->
+				<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
+					<div class="ui-grid-b" style="margin-top: 30px;">
+								<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#journal"><span class="shortcutSpan" ></span></a></div></div>
+								<div class="ui-block-b" id="headerText">Journal</div>
+								<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
+					</div><!-- /grid-b -->
 				</div>
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
 					<p class="descriptionText"> Here are your HappyBlue reflections, activities and entries from this date.</p>
 				</div>
-					<h2>Reflections:</h2>
-					<h2>Activities:</h2>
-					<h2>Entries:</h2>
+
+				<h2>Reflections:</h2>
+				<h2>Activities:</h2>
+				<h2>Entries:</h2>
 
 			</div>
 
@@ -542,9 +514,7 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
 		</div>
-				</div>
-			</div>
-		</div>
+
 
 			<!--- This is the activity page -->
 		<div data-role="page" data-theme="a" id="activity">
@@ -574,9 +544,7 @@ de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
 				<div class="shortcutFooter" id="settingsButton"><a href="#settings"><span class="shortcutSpan" ></span></a></div>
 			</div>
 		</div>
-				</div>
-			</div>
-		</div>
+
 
 		<!--- This is the Settings Page -->
 		<div data-role="page" data-theme="a" id="settings">

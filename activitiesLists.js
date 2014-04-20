@@ -1,11 +1,17 @@
 var activities = ["Eat", "Sleep", "Testing", "Testing", "Testing"];
-var journalArray = ["Entry 1",  "Entry 2", "Entry 3", "Entry 4"];
+var journalArray = [["3/14/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["3/15/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["3/16/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["3/25/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["4/14/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["4/19/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["4/20/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"]];
 
 function makeLists()
 {
       fillList("mindExercisesFill", activities, "activity");
       fillList("bodyExercisesFill", activities, "activity");
-      fillList("journalEntriesFill", journalArray, "journalEntry");
+      var journalDates = new Array();
+      for(var i = 0; i < journalArray.length; i++)
+      {
+        journalDates.push(journalArray[i][0]);
+      }
+
+      fillList("journalEntriesFill", journalDates, "journalEntry");
 }
 //Fill a ul with a list of activities
 function fillList(divName, arr, link)
