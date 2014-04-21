@@ -315,3 +315,9 @@ float: right;
   display:inline;
   float:right;
 }
+
+#label {
+  text-decoration: none !important;
+  font-size: 12px !important;
+  margin-left: 40px;
+}

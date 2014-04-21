@@ -37,6 +37,7 @@ function fillList(divName, arr, link)
 
 function completed()
 {
+  event.preventDefault();
   alert("This exercise has been added to your journal!");
   $("body").pagecontainer( "change", "#exercises1" );
 }
