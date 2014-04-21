@@ -96,13 +96,19 @@ function sendMail() {
 }
 
 var count = 0;
-var counter = setInterval(function(){timer()}, 2000);
+var counter = 0;
+
+function start() {
+  count = 0;
+  counter = setInterval(function(){timer(count, counter)}, 2000);
+}
+
 function timer()
 {
   console.log("timer");
   count = count + 1;
   console.log(count);
-  if(count == 6)
+  if(count >= 6)
   {
     clearInterval(counter);
     return;
