@@ -117,6 +117,16 @@
 					<p class="descriptionText"> Take five deep breaths. </p>
 				</div>
 
+				<div id="timer" style="font-size: 40px; text-align: center;" ></div>
+
+				<script type="text/javascript">
+    				$(document).on('pageinit', '#breathe',  function(){
+    					console.log("here");
+    					timer();
+    			});
+
+				</script>
+
 				<a href="#reflect" data-role="button" class="blueButton">Next</a>
 
 			</div>

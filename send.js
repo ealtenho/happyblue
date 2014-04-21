@@ -95,5 +95,22 @@ function sendMail() {
   }
 }
 
+var count = 0;
+var counter = setInterval(function(){timer()}, 2000);
+function timer()
+{
+  console.log("timer");
+  count = count + 1;
+  console.log(count);
+  if(count == 6)
+  {
+    clearInterval(counter);
+    return;
+  }
+
+  document.getElementById("timer").innerHTML = count;
+  console.log(count);
+}
+
 
 
