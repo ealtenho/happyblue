@@ -49,6 +49,7 @@ function errorOff(event){
 // }
 
 function sendMail() {
+  alert("UpdatedSend?");
 
         // var sender = localStorage.getItem('userEmail');
         // if(sender == null)
@@ -88,6 +89,7 @@ function sendMail() {
           }
 
             console.log(message);
+
             if(address != "" && address != "Recipient Email Address" && message != "Choose message...")
             {
                   var send = confirm("Leave the app to send your note via email?");
@@ -99,6 +101,18 @@ function sendMail() {
                         window.location.href = email;
                         console.log("Email" + email);
                   }
+
+            if(address != "" && address != "Recipient Email Address" && message != "Choose message..."){
+              var send = confirm("Leave the app to send your note via email?");
+              if(send){
+              var email = "mailto:" + address
+                     + "?cc=" + address
+                     + "&subject=" + escape("Sending You HappyBlue Thoughts")
+                     + "&body=" + message + icon;
+              window.location.href = email;
+              console.log("Email" + email);
+              }
+
             }
             else
             {
