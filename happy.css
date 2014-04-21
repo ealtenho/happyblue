@@ -275,6 +275,9 @@ float: right;
   color: #dddddd;
 }
 
+#homepage {
+	padding-top: 50px;
+}
 .blueButton {
   background-color: #004990 !important;
   color: #fff !important;
