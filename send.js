@@ -1,4 +1,22 @@
+function errorOff(event){
+  console.log('click');
+  $('#email').removeClass('errorDisplay');
+  if($('#email').val() =='Recipient Email Address')
+  {
+    $('#email').val("");
+  }
+}
 
+// function clearBox(event){
+//   console.log(event.target.id);
+//   console.log($(event.target.id));
+//   if(this.value == 'Recipient Email Address')
+//   {
+//     this.value='';
+//   }
+
+//   $('#email').removeClass('errorDisplay');
+// }
 // function clearBox(){
 
 //   console.log($('input[name=userEmail]', '#userEmail').val());
