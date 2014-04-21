@@ -303,8 +303,8 @@
 					<p class="descriptionText"> Friendship and gratitude increase happiness! Choose or write a note that includes text and an icon. </p>
 				</div>
 
-				<div class="email moveUp" onclick="console.log('click'); $('#email').removeClass('errorDisplay'); if($('#email').val()=='Recipient Email Address') {$('#email').val(" ")};" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }">
-						<input style="" type="email" name="email" id="email" value="Recipient Email Address" onclick="console.log('click'); if(this.value=='Recipient Email Address') {this.value=''}; $('#email').removeClass('errorDisplay');" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }" />
+				<div class="email moveUp" onclick="javascript:errorOff();" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }">
+						<input style="" type="email" name="email" id="email" value="Recipient Email Address" onclick="javascript:errorOff();" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }" />
 			  </div>
 
 				<div onclick="console.log('click'); $('#message-button').removeClass('errorDisplayButton');" >

@@ -1,4 +1,22 @@
+function errorOff(event){
+  console.log('click');
+  $('#email').removeClass('errorDisplay');
+  if($('#email').val() =='Recipient Email Address')
+  {
+    $('#email').val("");
+  }
+}
 
+// function clearBox(event){
+//   console.log(event.target.id);
+//   console.log($(event.target.id));
+//   if(this.value == 'Recipient Email Address')
+//   {
+//     this.value='';
+//   }
+
+//   $('#email').removeClass('errorDisplay');
+// }
 // function clearBox(){
 
 //   console.log($('input[name=userEmail]', '#userEmail').val());
@@ -70,16 +88,17 @@ function sendMail() {
           }
 
             console.log(message);
-            if(address != "" && address != "Recipient Email Address" && message != "Choose message..."){
-              var send = confirm("Leave the app to send your note via email?");
-              if(send){
-              var email = "mailto:" + address
-                     + "?cc=" + address
-                     + "&subject=" + escape("Sending You HappyBlue Thoughts")
-                     + "&body=" + message + icon;
-              window.location.href = email;
-              console.log("Email" + email);
-              }
+            if(address != "" && address != "Recipient Email Address" && message != "Choose message...")
+            {
+                  var send = confirm("Leave the app to send your note via email?");
+                  if(send){
+                        var email = "mailto:" + address
+                               + "?cc=" + address
+                               + "&subject=" + escape("Sending You HappyBlue Thoughts")
+                               + "&body=" + message + icon;
+                        window.location.href = email;
+                        console.log("Email" + email);
+                  }
             }
             else
             {
