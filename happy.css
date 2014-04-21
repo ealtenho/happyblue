@@ -44,12 +44,13 @@ h2 {
 }
 
 .descriptionText {
-  padding-top: 30px;
+  padding-top: 25px;
   width: 200px;
   margin-left: 35px;
   text-align: center;
   color: #004990;
 }
+
 
 .shortcut {
   display: inline-block;
@@ -110,14 +111,14 @@ margin-left: 50px;
 }
 
 #exerciseChooseButton {
-background-image: url(iconcopy.png);
+background-image: url(iconcopy1.png);
 background-size: 50px;
 background-repeat: no-repeat;
 margin-left: 70px;
 }
 
 #playChooseButton {
-background-image: url(Untitledcopy.png);
+background-image: url(Untitledcopy1.png);
 background-size: 50px;
 background-repeat: no-repeat;
 margin-left: 70px;
@@ -180,7 +181,7 @@ background-position:center;
 
 #homeButton {
 width : 36px;
-background-image: url(001copy.png);
+background-image: url(home.png);
 background-size: 36px;
 background-repeat: no-repeat;
 float: right;
@@ -216,7 +217,10 @@ float: right;
 
 #headerText {
   text-align: center;
+  color: #003365;
 }
+
+
 
 #icon1 {
   width: 50px;
@@ -275,6 +279,8 @@ float: right;
   background-color: #004990 !important;
   color: #fff !important;
   text-shadow: 1px 1px #000 !important;
+  width: 140px;
+  margin: 0 auto;
 }
 
 .sendButton {
