@@ -148,15 +148,15 @@ function preventDefault(e)
   e.preventDefault();
 }
 
-$("#message").bind( "change", function(event, ui) {
-  console.log("change");
-  console.log(this);
-  if($('#message option:selected').text() != "Choose message...")
-  {
-    console.log(true);
-    $("#writeown").val($('#message option:selected').text());
-  }
-});
+// $("#message").bind( "change", function(event, ui) {
+//   console.log("change");
+//   console.log(this);
+//   if($('#message option:selected').text() != "Choose message...")
+//   {
+//     console.log(true);
+//     $("#writeown").val($('#message option:selected').text());
+//   }
+// });
 
 function reEvaluate(){
   console.log("change");
@@ -165,6 +165,8 @@ function reEvaluate(){
   {
     console.log(true);
     $("#writeown").val($('#message option:selected').text());
+    $("#writeown").textinput('create');
+
   }
 }
 
