@@ -308,7 +308,7 @@
 			  </div>
 
 				<div onclick="console.log('click'); $('#message-button').removeClass('errorDisplayButton'); reEvaluate();" >
-							<select data-native-menu=false id="message">
+							<select onchange="reEvaluate();" data-native-menu=false id="message">
 										<option value="0">Choose message...</option>
 										<option value="1">You are a star!</option>
 										<option value="2">Thinking of you!</option>

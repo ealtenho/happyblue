@@ -159,14 +159,13 @@ function preventDefault(e)
 // });
 
 function reEvaluate(){
-  console.log("change");
+  console.log("reEvaluate");
   console.log(this);
   if($('#message option:selected').text() != "Choose message...")
   {
     console.log(true);
     $("#writeown").val($('#message option:selected').text());
-    $("#writeown").textinput('create');
-
+    console.log("end");
   }
 }
 
