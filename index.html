@@ -307,7 +307,7 @@
 						<input style="" type="email" name="email" id="email" value="Recipient Email Address" onclick="javascript:errorOff();" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }" />
 			  </div>
 
-				<div onclick="console.log('click'); $('#message-button').removeClass('errorDisplayButton');" >
+				<div onclick="console.log('click'); $('#message-button').removeClass('errorDisplayButton'); reEvaluate();" >
 							<select data-native-menu=false id="message">
 										<option value="0">Choose message...</option>
 										<option value="1">You are a star!</option>
@@ -319,7 +319,7 @@
 						<textarea style="margin-top:-10px !important" name="writeown" id="writeown"  onclick="if(this.value=='Or Write Your Own.'){ this.value = '';}" onblur="if(this.value== ''){ this.value='Or Write Your Own.'; }">Or Write Your Own.</textarea>
 
 						<select data-native-menu=false id="icon">
-										<option value="0">Include an icon?</option>
+										<option value="0">Include a picture?</option>
 										<option value="1">Heart</option>
 										<option value="2">Star</option>
 										<option value="3">Thumbs Up</option>
