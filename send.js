@@ -1,40 +1,38 @@
 
+// function clearBox(){
 
+//   console.log($('input[name=userEmail]', '#userEmail').val());
+//   $('input[name=userEmail]', '#userEmail').val(" ");
 
-function clearBox(){
-  console.log($('input[name=userEmail]', '#userEmail').val());
-  $('input[name=userEmail]', '#userEmail').val(" ");
+//   //$('input[name=userEmail]', '#userEmail').load('refresh.html #emptyDiv');
+//   console.log("This: " + $('input[name=userEmail]', '#send #userEmail').val());
+// }
 
-  //$('input[name=userEmail]', '#userEmail').load('refresh.html #emptyDiv');
-  console.log("This: " + $('input[name=userEmail]', '#send #userEmail').val());
-}
+// function popupEmail(){
+//   var updated = updateEmail();
+//   if(updated){
+//     $("body").pagecontainer( "change", "#send" );
+//   }
+// }
 
-function popupEmail(){
-  var updated = updateEmail();
-  if(updated){
-    $("body").pagecontainer( "change", "#send" );
-  }
-}
+// function updateEmail() {
+//   var email = $('input[name=userEmail]', '#userEmail').val();
 
-function updateEmail() {
-  var email = $('input[name=userEmail]', '#userEmail').val();
-
-  if(email != ""){
-    localStorage.setItem('userEmail', email);
-    alert("Your email address has been updated!");
-  }
-  else
-  {
-    alert("Please enter a valid email address.");
-    return false;
-  }
-  return true;
-}
+//   if(email != ""){
+//     localStorage.setItem('userEmail', email);
+//     alert("Your email address has been updated!");
+//   }
+//   else
+//   {
+//     alert("Please enter a valid email address.");
+//     return false;
+//   }
+//   return true;
+// }
 
 function sendMail() {
+  alert("UpdatedSend?");
 
-  var send = confirm("Leave the app to send your note via email?");
-  if(send){
         // var sender = localStorage.getItem('userEmail');
         // if(sender == null)
         // {
@@ -71,14 +69,19 @@ function sendMail() {
             default:
               console.log("None selected");
           }
+
             console.log(message);
-            if(address != "" && address != "Recipient Email Address" && message != "Choose message..."){
-              var email = "mailto:" + address
-                     + "?cc=" + address
-                     + "&subject=" + escape("Sending You HappyBlue Thoughts")
-                     + "&body=" + message + icon;
-              window.location.href = email;
-              console.log("Email" + email);
+            if(address != "" && address != "Recipient Email Address" && message != "Choose message...")
+            {
+                  var send = confirm("Leave the app to send your note via email?");
+                  if(send){
+                        var email = "mailto:" + address
+                               + "?cc=" + address
+                               + "&subject=" + escape("Sending You HappyBlue Thoughts")
+                               + "&body=" + message + icon;
+                        window.location.href = email;
+                        console.log("Email" + email);
+                  }
             }
             else
             {
@@ -93,7 +96,6 @@ function sendMail() {
                 $('#message-button').addClass("errorDisplayButton");
               }
             }
-  }
 }
 
 var count = 0;
