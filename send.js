@@ -1,5 +1,6 @@
 
 
+
 function clearBox(){
   console.log($('input[name=userEmail]', '#userEmail').val());
   $('input[name=userEmail]', '#userEmail').val(" ");

@@ -93,16 +93,18 @@ h2 {
 
 #exerciseHomeButton {
   width:70px;
-background-image: url(exercises.png);
+background-image: url(mindbody.png);
 background-size: 60px;
+background-position: 6px 0px;
 background-repeat: no-repeat;
 margin-left: 50px;
 }
 
 #sendHomeButton {
-  width: 60px;
-background-image: url(036.png);
-background-size: 60px;
+width: 60px;
+background-image: url(Envelope.png);
+background-size: 50px;
+background-position: 6px 0px;
 background-repeat: no-repeat;
 margin-left: 50px;
 }
@@ -301,6 +303,12 @@ float: right;
 
 .description {
   background-color: #dddddd;
+}
+
+.reflectEditText {
+  font-size: 14px !important;
+  color: #004990 !important;
+  margin-bottom: 0px !important;
 }
 
 .next {
