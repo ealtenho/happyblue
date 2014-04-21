@@ -119,22 +119,7 @@
 
 				<div id="timer" style="font-size: 40px; text-align: center;" >1</div>
 
-				<script type="text/javascript">
-    				$( document ).on( "pagecontainershow", $.mobile.pageContainer, function ( e, ui ) {
-    						document.getElementById("timer").innerHTML = 1;
-    						var pageId = $('body').pagecontainer('getActivePage').prop('id');
 
-    						if(pageId == "breathe")
-    						{
-    							console.log("start");
-    							start();
-    						}
-						});
-    				// 	console.log("start");
-    				// 	start();
-    				//  });
-
-				</script>
 
 				<a href="#reflect" data-role="button" class="blueButton">Next</a>
 
@@ -175,9 +160,13 @@
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
 					<p class="descriptionText"> Play the game below. </p>
-					<a href="#reflect" data-role="button" class="blueButton">Next</a>
 				</div>
 
+						<div class="moveUp" style="margin: 0 auto; width: 200px;">
+							<img src="maze1.png" height="200">
+						</div>
+
+						<a href="#reflect" data-role="button" class="blueButton">Next</a>
 			</div>
 
 			<!-- <div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
@@ -520,10 +509,15 @@
 				<div class="descriptionCloud">
 					<p class="descriptionText"> Here are your HappyBlue reflections, activities and entries from this date.</p>
 				</div>
-
-				<h2>Reflections:</h2>
-				<h2>Activities:</h2>
-				<h2>Entries:</h2>
+				<div class="moveUp">
+					<h2> 3/14/14 </h2>
+					<h2>Reflections:</h2>
+					<p> Puppies make me smile. My favorite place is Lake Waban. I'm thankful for my family. </p>
+					<h2>Activities:</h2>
+					<p> I did the activity "Savor: Eat Your Favorite Food Slowly."</p>
+					<h2>Entries:</h2>
+					<p>I started using happy blue and I like it!</p>
+				</div>
 
 			</div>
 
@@ -547,14 +541,19 @@
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
-					<p class="descriptionText"> Don't like this activity? Click to see another. Completed this activity? Click to add it to your journal.</p>
+					<p class="descriptionText"> Don't like this activity? Click the arrow to see the next. Completed this activity? Click to add it to your journal.</p>
 				</div>
 
-				<a href="#activity" data-role="button">Show Another Similar</a>
+				<div class="moveUp">
+						<!-- This button seems to distracting in this place -->
+						<!-- <a href="#activity" data-role="button">Show Another Similar</a> -->
 
-				<p> This is the description of the exercise </p>
+						<h2 class="heading">Savor<a href="#" class="next" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a></h2>
 
-				<a href="#activity" data-role="button" onclick="javascript:completed()">Completed</a>
+						<p>Take the time to appreciate something as much as it deserves. Go to the dining hall and find your favorite food or desert. Eat slowly, realizing how much you enjoy every bite.</p>
+
+						<a href="#activity" data-role="button" class="blueButton" onclick="javascript:completed()">Completed</a>
+				</div>
 			</div>
 
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
@@ -589,7 +588,27 @@
 		</div>
 
 		<script>
-			makeLists();
+						makeLists();
+
+    				$( document ).on( "pagecontainershow", $.mobile.pageContainer, function ( e, ui ) {
+    						document.getElementById("timer").innerHTML = 1;
+    						var pageId = $('body').pagecontainer('getActivePage').prop('id');
+
+    						if(pageId == "breathe")
+    						{
+    							console.log("start");
+    							start();
+    						}
+
+    						if(pageId == "journal" || pageId =="exercises1" || pageId == "exercises2" || pageId == "journalEntry")
+    						{
+    							document.removeEventListener('touchmove', preventDefault, false);
+    						}
+    						else
+    					 {
+    					 	document.addEventListener('touchmove', preventDefault, false);
+    					 }
+						});
 
 		</script>
 

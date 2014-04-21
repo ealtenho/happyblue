@@ -294,3 +294,16 @@ float: right;
 .entry {
   height:150px !important;
 }
+
+.heading {
+  text-align: center;
+}
+
+.description {
+  background-color: #dddddd;
+}
+
+.next {
+  display:inline;
+  float:right;
+}

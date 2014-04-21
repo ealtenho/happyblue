@@ -118,5 +118,12 @@ function timer()
   console.log(count);
 }
 
+document.addEventListener('touchmove', preventDefault, false);
+
+function preventDefault(e) {
+  e.preventDefault();
+};
+
+
 
 
