@@ -4,23 +4,43 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- The title of our app -->
 		<title>Happy Blue</title>
+
+		<!-- Set the logo of our app -->
 		<link rel="apple-touch-icon" href="smalllogo.jpg"/>
+
+		<!-- Import the stylesheets that were made with the theme roller -->
 		<link rel="stylesheet" href="themes/happyblue.min.css" />
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+
+		<!-- Import our own stylesheet where we make changes in addition to the theme rolling -->
 		<link rel="stylesheet" href="happy.css" />
+
+		<!--Import the JQuery mobile library -->
 		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 
-			<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Make this web app behave like a mobile app when saved to desktop -->
     <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Format of the apple header -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Import javascript for making this behave like a mobile app -->
     <script src="staystandalone.js"></script>
+
+    <!-- Import javascript for the send feature -->
     <script src="send.js"></script>
+
+    <!-- Import javascript for the exercises feature -->
     <script src="activitiesLists.js"></script>
 
 	</head>
+
+	<!-- This is where the html for all our pages begins -->
 	<body>
 
 		<!--- This is the Home Page -->
@@ -100,7 +120,7 @@
 			</div>
 		</div>
 
-		<!--- This is the Breathe -->
+		<!--- This is the Breathe Page -->
 		<div data-role="page" data-theme="a" id="breathe">
 
 			<div data-role="header" data-position="fixed" style="background-image: url(backdrop.png)">
@@ -327,15 +347,13 @@
 				</div>
 
 
-
+			<!-- When the user clicks send, call the javascript function that handles sending mail -->
 			<a href="javascript:sendMail()" data-role="button" class="blueButton sendButton">Send</a>
 
 			</div>
 
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal" id="label"><span class="shortcutSpan"></span>Journal</a></div>
-            	<!-- <div class="shortcutFooter" id="sendButton"><a href="javascript:sendMail()" data-role="button">Send</a></div> -->
-
 			</div>
 <!--
 			<div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
@@ -585,16 +603,26 @@
 		<script>
 						makeLists();
 
+						//This is code that is executed whenever a new page is loaded
     				$( document ).on( "pagecontainershow", $.mobile.pageContainer, function ( e, ui ) {
+    						//This starts the timer on the breathe page so it is ready whenever you go to that page
     						document.getElementById("timer").innerHTML = 1;
+
+    						//This call gets the id of whatever page was just loaded since that
+    						//can be unclear in the mulitpage model we are using
     						var pageId = $('body').pagecontainer('getActivePage').prop('id');
 
+    						//If the page is the breathe page, start the timer for the breathing activity
     						if(pageId == "breathe")
     						{
     							console.log("start");
     							start();
     						}
 
+    						//This is to make the app seem more like a mobile app. For all the pages that do not require scrolling,
+    						//we have disabled scrolling. This makes it so that touching the screen won't move the page up and down
+    						//on screens that have no need to move. Especially this is important for the page with the maze, because
+    						//if the screen moved whenever you tried to touch the page it would be very annoying.
     						if(pageId == "journal" || pageId =="exercises1" || pageId == "exercises2" || pageId == "journalEntry" || pageId == "reflectEdit")
     						{
     							document.removeEventListener('touchmove', preventDefault, false);
