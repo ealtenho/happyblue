@@ -9,54 +9,8 @@ function errorOff(event)
   }
 }
 
-// function clearBox(event){
-//   console.log(event.target.id);
-//   console.log($(event.target.id));
-//   if(this.value == 'Recipient Email Address')
-//   {
-//     this.value='';
-//   }
-
-//   $('#email').removeClass('errorDisplay');
-// }
-// function clearBox(){
-
-//   console.log($('input[name=userEmail]', '#userEmail').val());
-//   $('input[name=userEmail]', '#userEmail').val(" ");
-
-//   //$('input[name=userEmail]', '#userEmail').load('refresh.html #emptyDiv');
-//   console.log("This: " + $('input[name=userEmail]', '#send #userEmail').val());
-// }
-
-// function popupEmail(){
-//   var updated = updateEmail();
-//   if(updated){
-//     $("body").pagecontainer( "change", "#send" );
-//   }
-// }
-
-// function updateEmail() {
-//   var email = $('input[name=userEmail]', '#userEmail').val();
-
-//   if(email != ""){
-//     localStorage.setItem('userEmail', email);
-//     alert("Your email address has been updated!");
-//   }
-//   else
-//   {
-//     alert("Please enter a valid email address.");
-//     return false;
-//   }
-//   return true;
-// }
 
 function sendMail() {
-
-        // var sender = localStorage.getItem('userEmail');
-        // if(sender == null)
-        // {
-        //   $("#infoDiv").popup("open");
-        // }
 
           var address = $('input[name=email]', '.email').val();
 
@@ -141,22 +95,8 @@ function timer()
   console.log(count);
 }
 
-document.addEventListener('touchmove', preventDefault, false);
 
-function preventDefault(e)
-{
-  e.preventDefault();
-}
 
-// $("#message").bind( "change", function(event, ui) {
-//   console.log("change");
-//   console.log(this);
-//   if($('#message option:selected').text() != "Choose message...")
-//   {
-//     console.log(true);
-//     $("#writeown").val($('#message option:selected').text());
-//   }
-// });
 
 function reEvaluate(){
   console.log("reEvaluate");
@@ -168,5 +108,6 @@ function reEvaluate(){
     console.log("end");
   }
 }
+
 
 
