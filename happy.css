@@ -1,9 +1,6 @@
+/** HEADERS **/
 
-/** Text: headers and fonts **/
-
-/** The heading of each page in the header is styled  h1
-These headers must be moved down 10px because of the default iOS display of the clock
-and battery life at the top **/
+/** Applies to the header on the home page **/
 h1{
   margin-top: 10px !important;
 }
@@ -16,15 +13,28 @@ h2 {
   color: #004990 !important;
 }
 
+/** The heading of each page
+These headers must be moved down 30px because of the default iOS display of the clock
+and battery life at the top **/
+
+#headerSpace {
+  margin-top: 30px;
+}
 
 
+/** The header text for each page should be centered, blue, and written on one line **/
+#headerText {
+  text-align: center;
+  color: #003365;
+  white-space:nowrap;
+}
+
+/** Every header (and footer) should have a solid white background **/
 .whiteBackdrop {
   background-image: url(backdrop.png);
 }
 
-.pageHeader {
-  margin-top: 14px !important;
-}
+/** ICON STYLES **/
 
 /** This is the styling for the chevron icon that appears on list items **/
 .ui-icon-happy-chevron {
@@ -222,12 +232,6 @@ float: right;
 	height: 60px;
 }
 
-#headerText {
-  text-align: center;
-  color: #003365;
-}
-
-
 
 #icon1 {
   width: 50px;
@@ -236,12 +240,6 @@ float: right;
   background-repeat: no-repeat;
 }
 
-/** Move up text field **/
-/*div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset
-{
-  margin-top: -50px;
-}
-*/
 .errorDisplay {
   -webkit-box-shadow:0 0 12px #E8730C ;
   -moz-box-shadow:0 0 12px #E8730C ;

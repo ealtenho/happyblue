@@ -46,16 +46,19 @@
 		<!--- This is the Home Page -->
 		<div data-role="page" data-theme="a" id="home">
 
+			<!-- Each of our "pages" has the same kind of header. It is fixed at the top and has a white backdrop -->
 			<div id="header" data-role="header" data-position="fixed" class="whiteBackdrop">
             <h1><img src="logobanner.png" width="100%" height="auto"></h1>
-				<!--<h1 style="margin-top: 14px;"><img src="logodraft.png" width="100%" height="auto"></h1>-->
 			</div>
 
+			<!-- This is the content of the page -->
 			<div data-role="content" data-theme="a" id="homepage">
+						<!-- The first thing in the content of every page is a cloud with a description -->
 						<div class="descriptionCloud">
 							<p class="descriptionText">Here are positive psychology activities designed to make you a happy Wellesley blue!</p>
 						</div>
 
+						<!-- The main controls on this page are clickable icons -->
 						<div class="shortcut" id="exerciseHomeButton"><a href="#exercises1"><span class="shortcutSpan" ><br><br><br>Do Exercise</span></a></div>
 
 						<div class="shortcut" id="sendHomeButton"><a href="#send"><span class="shortcutSpan" ><br><br><br>Send Note</span></a></div>
@@ -65,7 +68,7 @@
 			</div>
 
 
-
+			<!-- This is the footer of the page -->
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal" id="label"><span class="shortcutSpan"></span>Journal</a></div>
 			</div>
@@ -75,9 +78,9 @@
 		<!--- This is the Guided Destress Page -->
 		<div data-role="page" data-theme="a" id="guided">
 			<div data-role="header" data-position="fixed" class="whiteHeader">
-				<div class="ui-grid-b" style="margin-top: 30px;">
+				<div class="ui-grid-b" id="headerSpace">
 					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
-					<div class="ui-block-b" id="headerText" style="white-space:nowrap">Guided De-Stress</div>
+					<div class="ui-block-b" id="headerText">Guided De-Stress</div>
 					<div class="ui-block-c"><div class="shortcutHeader" id="homeButton"><a href="#home"><span class="shortcutSpan" ></span></a></div></div>
 				</div><!-- /grid-b -->
 			</div>
@@ -101,16 +104,6 @@
 
 			</div>
 
-			<!-- <div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
-				<div data-role="navbar">
-						<ul>
-							<li><a href="#" class="current">1. Choose</a></li>
-							<li><a href="#breathe">2. Relax</a></li>
-							<li><a href="#reflect">3. Reflect</a></li>
-					 	</ul>
-				</div>
-			</div> -->
-
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
 				<div data-role="controlgroup" data-type="horizontal" style="margin-left:5%; margin-bottom: 1px; margin-top: 1px;">
 						<a href="#" data-role="button" class="ui-btn-active" style="width: 70px; border-color: #e1c335 ;">1. Choose</a>
@@ -124,7 +117,7 @@
 		<div data-role="page" data-theme="a" id="breathe">
 
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
-				<div class="ui-grid-b" style="margin-top: 30px;">
+				<div class="ui-grid-b" id="headerSpace">
 					<div class="ui-block-a"><a href="#guided" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 					<div class="ui-block-b" id="headerText">Breathe</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -144,17 +137,6 @@
 
 			</div>
 
-			<!-- <div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
-				<div data-role="navbar">
-						<ul>
-							<li><a href="#guided">1. Choose</a></li>
-							<li><a href="#" class="current">2. Relax</a></li>
-							<li><a href="#reflect">3. Reflect</a></li>
-					 </ul>
-				</div>
-			</div> -->
-
-
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
 				<div data-role="controlgroup" data-type="horizontal" style="margin-left:5%; margin-bottom: 1px; margin-top: 1px;">
 						<a href="#guided" data-role="button" style="width: 70px; border-color: #e1c335 ; background-color: #fff">1. Choose</a>
@@ -168,7 +150,7 @@
 		<!--- This is the Play Page -->
 		<div data-role="page" data-theme="a" id="play">
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
-			<div class="ui-grid-b" style="margin-top: 30px;">
+			<div class="ui-grid-b" id="headerSpace">
 					<div class="ui-block-a"><a href="#guided" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 					<div class="ui-block-b" id="headerText">Play</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -188,16 +170,6 @@
 						<a href="#reflect" data-role="button" class="blueButton">Next</a>
 			</div>
 
-			<!-- <div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
-				<div data-role="navbar">
-						<ul>
-							<li><a href="#guided">1. Choose</a></li>
-							<li class="current"><a href="#" class="current">2. Relax</a></li>
-							<li><a href="#reflect">3. Reflect</a></li>
-					 </ul>
-				</div>
-			</div> -->
-
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
 				<div data-role="controlgroup" data-type="horizontal" style="margin-left:5%; margin-bottom: 1px; margin-top: 1px;">
 						<a href="#guided" data-role="button" style="width: 70px; border-color: #e1c335 ; background-color: #fff">1. Choose</a>
@@ -211,7 +183,7 @@
 		<!--- This is the Reflect Page -->
 		<div data-role="page" data-theme="a" id="reflect">
 				<div data-role="header" data-position="fixed" class="whiteBackdrop">
-					<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-grid-b" id="headerSpace">
 								<div class="ui-block-a"><a href="#breathe" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 								<div class="ui-block-b" id="headerText">Reflect</div>
 								<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -250,16 +222,6 @@
 					<a href="#reflectEdit" data-role="button" class="blueButton submitButton">Submit</a>
 				</div>
 
-			<!-- <div data-role="footer" data-position="fixed" style="background-image: url(backdrop.png)">
-				<div data-role="navbar">
-						<ul>
-							<li><a href="#guided">1. Choose</a></li>
-							<li><a href="#breathe">2. Relax</a></li>
-							<li><a href="#" class="current">3. Reflect</a></li>
-					 </ul>
-				</div>
-			</div> -->
-
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
 				<div data-role="controlgroup" data-type="horizontal" style="margin-left:5%; margin-bottom: 1px; margin-top: 1px;">
 						<a href="#guided" data-role="button" style="width: 70px; border-color: #e1c335 ;  background-color: #fff">1. Choose</a>
@@ -273,7 +235,7 @@
 		<!--- This is the Reflect Edit Page -->
 		<div data-role="page" data-theme="a" id="reflectEdit">
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
-			<div class="ui-grid-b" style="margin-top: 30px;">
+			<div class="ui-grid-b" id="headerSpace">
 					<div class="ui-block-a"><a href="#reflect" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 					<div class="ui-block-b" id="headerText">Reflect</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -311,7 +273,7 @@
 		<!--- This is the Send Page -->
 		<div data-role="page" data-theme="a" id="send">
 					<div data-role="header" data-position="fixed" data-id="persistent-header" class="whiteBackdrop">
-						<div class="ui-grid-b" style="margin-top: 30px;">
+						<div class="ui-grid-b" id="headerSpace">
 								<div class="ui-block-a"><a href="#home" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 								<div class="ui-block-b" id="headerText">Send</div>
 								<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -372,7 +334,7 @@
 		<!--- This is the Exercises (MIND) Page -->
 		<div data-role="page" data-theme="a" id="exercises1">
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
-			<div class="ui-grid-b" style="margin-top: 30px;">
+			<div class="ui-grid-b" id="headerSpace">
 					<div class="ui-block-a"><a href="#home" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 					<div class="ui-block-b" id="headerText">Exercises</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -414,7 +376,7 @@
 		<!--- This is the Exercises (Body) Page -->
 		<div data-role="page" data-theme="a" id="exercises2">
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
-			<div class="ui-grid-b" style="margin-top: 30px;">
+			<div class="ui-grid-b" id="headerSpace">
 					<div class="ui-block-a"><a href="#home" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 					<div class="ui-block-b" id="headerText">Exercises</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -434,16 +396,6 @@
 
 			</div>
 
-
-
-			<!-- <div data-role="footer" data-position="fixed">
-				<div data-role="navbar">
-						<ul>
-							<li><a href="#exercises1">Mind</a></li>
-							<li><a href="#" class="current">Body</a></li>
-					 </ul>
-				</div>
-			</div> -->
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
 				<div data-role="controlgroup" data-type="horizontal" style="margin-left:20%; margin-bottom: 1px; margin-top: 1px;">
 						<a href="#exercises1" data-role="button" style="width: 75px; border-color: #e1c335 ; background-color: #fff">Mind</a>
@@ -457,7 +409,7 @@
 		<!--- This is the journal Page -->
 		<div data-role="page" data-theme="a" id="journal">
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
-			<div class="ui-grid-b" style="margin-top: 30px;">
+			<div class="ui-grid-b" id="headerSpace">
 					<div class="ui-block-a"><a href="#home" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 					<div class="ui-block-b" id="headerText">Journal</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -488,7 +440,7 @@
 		<!--- This is the Write Entry Page -->
 		<div data-role="page" data-theme="a" id="write">
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
-			<div class="ui-grid-b" style="margin-top: 30px;">
+			<div class="ui-grid-b" id="headerSpace">
 					<div class="ui-block-a"><a href="#journal" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 					<div class="ui-block-b" id="headerText">Write</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -517,7 +469,7 @@
 		<!--- This is the Journal Entry Page -->
 		<div data-role="page" data-theme="a" id="journalEntry">
 				<div data-role="header" data-position="fixed" class="whiteBackdrop">
-					<div class="ui-grid-b" style="margin-top: 30px;">
+					<div class="ui-grid-b" id="headerSpace">
 								<div class="ui-block-a"><a href="#journal" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 								<div class="ui-block-b" id="headerText">Journal</div>
 								<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -549,7 +501,7 @@
 			<!--- This is the activity page -->
 		<div data-role="page" data-theme="a" id="activity">
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
-			<div class="ui-grid-b" style="margin-top: 30px;">
+			<div class="ui-grid-b" id="headerSpace">
 					<div class="ui-block-a"><a href="#journal" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
 					<div class="ui-block-b" id="headerText">Exercise</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
@@ -580,7 +532,7 @@
 		<!--- This is the Settings Page -->
 		<div data-role="page" data-theme="a" id="settings">
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
-			<div class="ui-grid-b" style="margin-top: 30px;">
+			<div class="ui-grid-b" id="headerSpace">
 					<div class="ui-block-a"><div class="shortcutHeader" id="backButton"><a href="#home" data-rel="back"><span class="shortcutSpan" ></span></a></div></div>
 					<div class="ui-block-b" id="headerText">Settings</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
