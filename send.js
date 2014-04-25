@@ -1,4 +1,5 @@
 
+//This is the code I used to turn on and off the error highlighting
 function errorOff(event)
 {
   console.log('click');
@@ -24,7 +25,6 @@ function sendMail() {
 
           var icon = " ";
 
-          //var choice = $('input[name=radio-choice]:checked', '#iconChoice').val();
           var choice = $('#icon option:selected').text();
           console.log(choice);
 
