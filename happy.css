@@ -1,30 +1,47 @@
+/** HEADERS **/
 
-.ui-icon-campus-info {
-  background-image: url("025.png");
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  background-position: 90% 50%;
-}
-
-.ui-icon-happy-chevron {
-  background-image: url("chevron.png");
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  background-position: 95% 45%;
-}
-
+/** Applies to the header on the home page **/
 h1{
   margin-top: 10px !important;
 }
 
+/** h2 is used as labels on some of the pages, they are smaller blue
+subheadings that are not broken across lines **/
 h2 {
   white-space: nowrap;
   font-size: 20px !important;
   color: #004990 !important;
 }
 
-.pageHeader {
-  margin-top: 14px !important;
+/** The heading of each page
+These headers must be moved down 30px because of the default iOS display of the clock
+and battery life at the top **/
+
+#headerSpace {
+  margin-top: 30px;
+}
+
+
+/** The header text for each page should be centered, blue, and written on one line **/
+#headerText {
+  text-align: center;
+  color: #003365;
+  white-space:nowrap;
+}
+
+/** Every header (and footer) should have a solid white background **/
+.whiteBackdrop {
+  background-image: url(backdrop.png);
+}
+
+/** ICON STYLES **/
+
+/** This is the styling for the chevron icon that appears on list items **/
+.ui-icon-happy-chevron {
+  background-image: url("chevron.png");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: 95% 45%;
 }
 
 .current {
@@ -44,12 +61,13 @@ h2 {
 }
 
 .descriptionText {
-  padding-top: 30px;
+  padding-top: 25px;
   width: 200px;
   margin-left: 35px;
   text-align: center;
   color: #004990;
 }
+
 
 .shortcut {
   display: inline-block;
@@ -93,7 +111,7 @@ h2 {
 
 #exerciseHomeButton {
   width:70px;
-background-image: url(mindbody.png);
+background-image: url(mindbodycopy.png);
 background-size: 60px;
 background-position: 6px 0px;
 background-repeat: no-repeat;
@@ -102,7 +120,7 @@ margin-left: 50px;
 
 #sendHomeButton {
 width: 60px;
-background-image: url(Envelope.png);
+background-image: url(Envelopecopy.png);
 background-size: 50px;
 background-position: 6px 0px;
 background-repeat: no-repeat;
@@ -110,14 +128,14 @@ margin-left: 50px;
 }
 
 #exerciseChooseButton {
-background-image: url(icon.png);
+background-image: url(iconcopy1.png);
 background-size: 50px;
 background-repeat: no-repeat;
 margin-left: 70px;
 }
 
 #playChooseButton {
-background-image: url(Untitled.png);
+background-image: url(Untitledcopy1.png);
 background-size: 50px;
 background-repeat: no-repeat;
 margin-left: 70px;
@@ -153,7 +171,7 @@ z-index: 10;
 
 
 #journalButton {
-background-image: url(024.png);
+background-image: url(024copy.png);
 background-size: 25px;
 background-repeat: no-repeat;
 margin-left: 5px;
@@ -161,7 +179,7 @@ background-position:center;
 }
 
 #writeButton {
-background-image: url(027.png);
+background-image: url(027copy.png);
 background-size: 25px;
 background-repeat: no-repeat;
 margin-left: 5px;
@@ -180,7 +198,7 @@ background-position:center;
 
 #homeButton {
 width : 36px;
-background-image: url(001.png);
+background-image: url(home.png);
 background-size: 36px;
 background-repeat: no-repeat;
 float: right;
@@ -189,14 +207,14 @@ float: right;
 
 #backButton {
 width : 36px;
-background-image: url(back.png);
+background-image: url(backcopy.png);
 background-size: 36px;
 background-repeat: no-repeat;
 }
 
 #journalButtonBlock {
 width: 36px;
-background-image: url(024.png);
+background-image: url(024copy.png);
 background-size: 25px;
 background-repeat: no-repeat;
 float: left;
@@ -214,9 +232,6 @@ float: right;
 	height: 60px;
 }
 
-#headerText {
-  text-align: center;
-}
 
 #icon1 {
   width: 50px;
@@ -225,12 +240,6 @@ float: right;
   background-repeat: no-repeat;
 }
 
-/** Move up text field **/
-/*div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset
-{
-  margin-top: -50px;
-}
-*/
 .errorDisplay {
   -webkit-box-shadow:0 0 12px #E8730C ;
   -moz-box-shadow:0 0 12px #E8730C ;
@@ -271,10 +280,15 @@ float: right;
   color: #dddddd;
 }
 
+#homepage {
+	padding-top: 50px;
+}
 .blueButton {
   background-color: #004990 !important;
   color: #fff !important;
   text-shadow: 1px 1px #000 !important;
+  width: 140px;
+  margin: 0 auto;
 }
 
 .sendButton {
@@ -314,4 +328,10 @@ float: right;
 .next {
   display:inline;
   float:right;
+}
+
+#label {
+  text-decoration: none !important;
+  font-size: 12px !important;
+  margin-left: 40px;
 }

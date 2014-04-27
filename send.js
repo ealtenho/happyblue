@@ -30,14 +30,19 @@
 //   return true;
 // }
 
-function sendMail() {
-  alert("UpdatedSend?");
+//This is the code I used to turn on and off the error highlighting
+function errorOff(event)
+{
+  console.log('click');
+  $('#email').removeClass('errorDisplay');
+  if($('#email').val() =='Recipient Email Address')
+  {
+    $('#email').val("");
+  }
+}
 
-        // var sender = localStorage.getItem('userEmail');
-        // if(sender == null)
-        // {
-        //   $("#infoDiv").popup("open");
-        // }
+
+function sendMail() {
 
           var address = $('input[name=email]', '.email').val();
 
@@ -51,7 +56,6 @@ function sendMail() {
 
           var icon = " ";
 
-          //var choice = $('input[name=radio-choice]:checked', '#iconChoice').val();
           var choice = $('#icon option:selected').text();
           console.log(choice);
 
@@ -71,6 +75,7 @@ function sendMail() {
           }
 
             console.log(message);
+
             if(address != "" && address != "Recipient Email Address" && message != "Choose message...")
             {
                   var send = confirm("Leave the app to send your note via email?");
@@ -121,12 +126,19 @@ function timer()
   console.log(count);
 }
 
-document.addEventListener('touchmove', preventDefault, false);
 
-function preventDefault(e) {
-  e.preventDefault();
-};
 
+
+function reEvaluate(){
+  console.log("reEvaluate");
+  console.log(this);
+  if($('#message option:selected').text() != "Choose message...")
+  {
+    console.log(true);
+    $("#writeown").val($('#message option:selected').text());
+    console.log("end");
+  }
+}
 
 
 
