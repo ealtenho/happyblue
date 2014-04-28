@@ -107,12 +107,22 @@ function completed()
 
     if(currentBody.length != 0)
     {
-       alert($("#exerciseName").text() + "has been added to your journal!");
+      //alert($("#exerciseName").text() + "has been added to your journal!");
       localStorage.setItem("bodyExercises", JSON.stringify(currentBody));
+      $("#text").empty();
+      $("#text").html($("#exerciseName").text() + "has been added to your journal!");
+      console.log("" + $("#openJournal"));
+      console.log("Journal");
+      $("#openJournal").popup("open");
     }
     else {
-      alert("Congratulations! You have completed all the Body exercises. We'll refresh the list so you can do them again.");
+      //alert("Congratulations! You have completed all the Body exercises. We'll refresh the list so you can do them again.");
       localStorage.setItem("bodyExercises", JSON.stringify(bodyExercises));
+      $("#text").empty();
+      $("#text").html("Congratulations! You have completed all the Mind exercises. We'll refresh the list so you can do them again.");
+      console.log("" + $("#openJournal"));
+        console.log("Journal");
+      $("#openJournal").popup("open");
     }
 
 
@@ -128,16 +138,25 @@ function completed()
     if(currentMind.length != 0)
     {
       localStorage.setItem("bodyExercises", JSON.stringify(currentBody));
-       alert($("#exerciseName").text() + "has been added to your journal!");
+       //alert($("#exerciseName").text() + "has been added to your journal!");
+       $("#text").empty();
+       $("#text").html($("#exerciseName").text() + "has been added to your journal!");
+       $("#openJournal").popup("open");
     }
     else {
-      alert("Congratulations! You have completed all the Mind exercises. We'll refresh the list so you can do them again.");
+      //alert("Congratulations! You have completed all the Mind exercises. We'll refresh the list so you can do them again.");
       localStorage.setItem("mindExercises", JSON.stringify(mindExercises));
+      $("#text").empty();
+      $("#text").html("Congratulations! You have completed all the Mind exercises. We'll refresh the list so you can do them again.");
+      $("#openJournal").popup("open");
     }
   }
 
   makeLists();
 
 
-  $("body").pagecontainer( "change", "#exercises1" );
+ // $("body").pagecontainer( "change", "#exercises1" );
 }
+
+
+
