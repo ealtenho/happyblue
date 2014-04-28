@@ -11,8 +11,10 @@ var mindExercises = ["Savor : Go to the dining hall and find the best food or de
 var journalArray = [["3/14/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["3/15/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["3/16/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["3/25/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["4/14/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["4/19/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"], ["4/20/14",  "Happy Blue", "Savor: Eat Your Favorite Food Slowly", "I started using happy blue and I like it!"]];
 
 //Initial completed array
-var completedArray = ["First", "Second"];
+//var completedArray = ["First", "Second"];
 
+//This is a filler array to show the user that they have no journal entries yet.
+//Once a journal is started, this will be saved over in local storage
 var journalArrayInitial = ["No entries yet! | Complete a reflection to see your thoughts recorded here. | Complete an exercise to see a record of it here. | Write a journal entry to see a record of it here."];
 
 //The first time the user opens the app, they will have no array in local storage. Put the arrays in local storage.
@@ -299,6 +301,7 @@ function nextActivity(num)
     $("body").pagecontainer( "change", "#activity");
 }
 
+//Get and format today's date so we can associate journal entries with the date
 function todaysDate()
 {
   var dateObject = new Date();
