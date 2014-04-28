@@ -518,13 +518,26 @@
 
 				<div class="moveUp">
 
-						<h2 class="heading" id="exerciseName">Exercise Name<a href="#" class="next" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a></h2>
+						<h2 class="heading"><div id="exerciseName">Exercise Name</div><a href="#" class="next" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a></h2>
 
 						<p id="exerciseDescription">Exercise Description</p>
 
 						<a href="#activity" data-role="button" class="blueButton" onclick="javascript:completed()">Completed</a>
 				</div>
+
+
+
 			</div>
+
+				<div id="openJournal" data-role="popup" style="width:270px">
+					<p id="text"></p>
+					<div data-role="navbar" style="width:278px">
+						<ul>
+							<li><a href="#exercises1">Ok</a></li>
+							<li><a href="#journal">Open Journal</a></li>
+						</ul>
+					</div>
+				</div>
 
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
 				<div class="shortcutFooter" id="journalButton"><a href="#journal" id="label"><span class="shortcutSpan"></span>Journal</a></div>
