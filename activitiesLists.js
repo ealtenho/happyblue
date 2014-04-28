@@ -17,28 +17,34 @@ var journalArray = [["3/14/14",  "Happy Blue", "Savor: Eat Your Favorite Food Sl
 //Once a journal is started, this will be saved over in local storage
 var journalArrayInitial = ["No entries yet! | Complete a reflection to see your thoughts recorded here. | Complete an exercise to see a record of it here. | Write a journal entry to see a record of it here."];
 
+if(localStorage.getItem("journalDetails") == null)
+{
+  console.log("Setting Initial");
+  console.log("IN HERE");
+  localStorage.setItem("journalDetails", JSON.stringify(journalArrayInitial));
+}
+
 //The first time the user opens the app, they will have no array in local storage. Put the arrays in local storage.
 if(localStorage.getItem("bodyExercises") == null)
 {
+  console.log("setting body exercises");
   localStorage.setItem("bodyExercises", JSON.stringify(bodyExercises));
 }
 
 if(localStorage.getItem("mindExercises") == null)
 {
+  console.log("setting mind exercises");
   localStorage.setItem("mindExercises", JSON.stringify(mindExercises));
 }
 
 //Make an array to save the user's completed exercises
-if(localStorage.getItem("completedExercises") == null)
-{
-  localStorage.setItem("completedExercises", JSON.stringify(completedArray));
-}
+// if(localStorage.getItem("completedExercises") == null)
+// {
+//   console.log("setting completed exercises");
+//   localStorage.setItem("completedExercises", JSON.stringify(completedArray));
+// }
 
-//Make an array to save the user's completed exercises
-if(localStorage.getItem("journalDetails") == null)
-{
-  localStorage.setItem("journalDetails", JSON.stringify(journalArrayInitial));
-}
+
 
 //On our pages that have lists I have set up empty divs
 //This javascript fills those divs with the appropriate lists
@@ -140,9 +146,13 @@ function completed()
   //Dealing with the journal
   var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
   console.log("Current journal: " + currentJournal);
-  var lastEntry = currentJournal[currentJournal.length - 1].split(":");
+  var lastEntry = currentJournal[currentJournal.length - 1].split("|");
   var hasEntry = true;
-  if(lastEntry[0] != todaysDate())
+  var last = lastEntry[0].substring(0,9);
+  console.log("This is the last entry date: " + last);
+  console.log(todaysDate());
+  console.log("Is the last entry date equal: " + (last == todaysDate()));
+  if(last != todaysDate())
   {
     hasEntry = false;
     lastEntry = [todaysDate(), "", "", ""];
@@ -158,10 +168,10 @@ function completed()
   var currentCompleted = JSON.parse(localStorage.getItem("completedExercises"));
   if(isBody != -1)
   {
-    var arrayUpdate = currentBody.splice(isBody, 1);
+    var arrayUpdate = "<br>" + currentBody.splice(isBody, 1);
 
     //currentCompleted.push(arrayUpdate);
-    lastEntry[2] = arrayUpdate;
+    lastEntry[2] = lastEntry[2] + arrayUpdate;
     var str = "";
     for(var i = 0; i < lastEntry.length - 1; i++)
     {
@@ -205,9 +215,9 @@ function completed()
   }
   else
   {
-    var arrayUpdate = currentMind.splice(isMind, 1);
+    var arrayUpdate = "<br>" + currentMind.splice(isMind, 1);
 
-    lastEntry[2] = arrayUpdate;
+    lastEntry[2] = lastEntry[2] + arrayUpdate;
     var str = "";
     for(var i = 0; i < lastEntry.length - 1; i++)
     {
