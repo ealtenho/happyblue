@@ -176,19 +176,28 @@ function nextActivity(num)
   if(isBody != -1)
   {
     var next = isBody + num;
-    if(next >= isBody.length)
+    if(next >= currentBody.length)
     {
       next = 0;
+    }
+    else if(next < 0)
+    {
+      next = currentBody.length - 1;
     }
     var nameAndDescription = currentBody[next].split(":");
   }
   else
   {
     var next = isMind + num;
-    if(next >= isMind.length)
+    if(next >= currentMind.length)
     {
       next = 0;
     }
+    else if(next < 0)
+    {
+      next = currentMind.length - 1;
+    }
+
     var nameAndDescription = currentMind[next].split(":");
   }
     $("#exerciseName").html(nameAndDescription[0]);
