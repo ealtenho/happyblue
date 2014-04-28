@@ -158,5 +158,44 @@ function completed()
  // $("body").pagecontainer( "change", "#exercises1" );
 }
 
+function nextActivity(num)
+{
+  event.preventDefault();
+  console.log($("#exerciseName").text() + ":" + $("#exerciseDescription").text());
+  var currentExercise = $("#exerciseName").text() + ":" + $("#exerciseDescription").text();
+  var currentBody = JSON.parse(localStorage.getItem("bodyExercises"));
+  var currentMind = JSON.parse(localStorage.getItem("mindExercises"));
+
+  var isBody = $.inArray(currentExercise, currentBody);
+  var isMind = $.inArray(currentExercise, currentMind);
+
+  console.log(currentBody);
+  console.log("index " + isBody);
+
+  var currentCompleted = JSON.parse(localStorage.getItem("completedExercises"));
+  if(isBody != -1)
+  {
+    var next = isBody + num;
+    if(next >= isBody.length)
+    {
+      next = 0;
+    }
+    var nameAndDescription = currentBody[next].split(":");
+  }
+  else
+  {
+    var next = isMind + num;
+    if(next >= isMind.length)
+    {
+      next = 0;
+    }
+    var nameAndDescription = currentMind[next].split(":");
+  }
+    $("#exerciseName").html(nameAndDescription[0]);
+    $("#exerciseDescription").html(nameAndDescription[1]);
+    $("body").pagecontainer( "change", "#activity");
+}
+
+
 
 

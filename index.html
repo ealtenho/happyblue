@@ -518,7 +518,10 @@
 
 				<div class="moveUp">
 
-						<h2 class="heading"><div id="exerciseName">Exercise Name</div><a href="#" class="next" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a></h2>
+						<h2 class="heading"><div id="exerciseName">Exercise Name</div></h2>
+
+						<a href="#" class="previous" onclick="javascript:nextActivity(-1);" data-role="button" data-icon="carat-l" data-iconpos="notext"></a>
+						<a href="#" class="next" onclick="javascript:nextActivity(1);" data-role="button" data-icon="carat-r" data-iconpos="notext"></a>
 
 						<p id="exerciseDescription">Exercise Description</p>
 
@@ -534,7 +537,7 @@
 					<div data-role="navbar" style="width:278px">
 						<ul>
 							<li><a href="#exercises1">Ok</a></li>
-							<li><a href="#journal">Open Journal</a></li>
+							<li ><a href="#journal" style="margin-right: 0px;">Open Journal</a></li>
 						</ul>
 					</div>
 				</div>
