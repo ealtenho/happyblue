@@ -13,6 +13,8 @@ var journalArray = [["3/14/14",  "Happy Blue", "Savor: Eat Your Favorite Food Sl
 //Initial completed array
 var completedArray = ["First", "Second"];
 
+var journalArrayInitial = ["No entries yet! | Complete a reflection to see your thoughts recorded here. | Complete an exercise to see a record of it here. | Write a journal entry to see a record of it here."];
+
 //The first time the user opens the app, they will have no array in local storage. Put the arrays in local storage.
 if(localStorage.getItem("bodyExercises") == null)
 {
@@ -30,6 +32,11 @@ if(localStorage.getItem("completedExercises") == null)
   localStorage.setItem("completedExercises", JSON.stringify(completedArray));
 }
 
+//Make an array to save the user's completed exercises
+if(localStorage.getItem("journalDetails") == null)
+{
+  localStorage.setItem("journalDetails", JSON.stringify(journalArrayInitial));
+}
 
 //On our pages that have lists I have set up empty divs
 //This javascript fills those divs with the appropriate lists
@@ -43,7 +50,7 @@ function makeLists()
         journalDates.push(journalArray[i][0]);
       }
 
-      fillList("journalEntriesFill", journalDates, "journalEntry");
+      fillJournal("journalEntriesFill", JSON.parse(localStorage.getItem("journalDetails")), "journalEntry");
 }
 //Fill a ul with a list of activities
 function fillList(divName, arr, link)
@@ -69,6 +76,43 @@ function fillList(divName, arr, link)
   }
 }
 
+function fillJournal(divName, arr, link)
+{
+  var div = $("#" + divName);
+  console.log("List to fill #" + divName);
+  var current = arr[0];
+
+  div.empty();
+
+
+  for(var i = 0; i < arr.length - 1; i++)
+  {
+    current = arr[i];
+    div.append("<li><a href=\"#\" onclick=\"javascript:journalPage('" + arr[i] +"')\" class=\"ul-link-inherit ui-btn ui-icon-happy-chevron\"><h3 class=\"ul-li-heading\">"+ current.split("|")[0] + "</h3></a></li>");
+  }
+  current = arr[arr.length - 1];
+  console.log(current);
+  if(current != undefined)
+  {
+    console.log("Parameter: " + arr[i]);
+    div.append("<li class=\" ui-last-child\"><a href=\"#\" onclick=\"javascript:journalPage('" + arr[i] +"')\" class=\"ul-link-inherit ui-btn ui-icon-happy-chevron\"><h3 class=\"ul-li-heading\">"+ current.split("|")[0] + "</h3></a></li>");
+  }
+}
+
+function journalPage(journalDetail)
+{
+  event.preventDefault();
+  //console.log(exerciseDetail);
+  var journalDetails = journalDetail.split("|");
+  //console.log(nameAndDescription);
+  $("#journalDate").html(journalDetails[0]);
+  $("#reflectionData").html(journalDetails[1]);
+  $("#activityData").html(journalDetails[2]);
+  $("#writingData").html(journalDetails[3]);
+  $("body").pagecontainer( "change", "#journalEntry" );
+
+}
+
 function exercisePage(exerciseDetail)
 {
   //console.log("Calling");
@@ -91,6 +135,18 @@ function completed()
   var currentBody = JSON.parse(localStorage.getItem("bodyExercises"));
   var currentMind = JSON.parse(localStorage.getItem("mindExercises"));
 
+  //Dealing with the journal
+  var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
+  console.log("Current journal: " + currentJournal);
+  var lastEntry = currentJournal[currentJournal.length - 1].split(":");
+  var hasEntry = true;
+  if(lastEntry[0] != todaysDate())
+  {
+    hasEntry = false;
+    lastEntry = [todaysDate(), "", "", ""];
+  }
+
+
   var isBody = $.inArray(currentExercise, currentBody);
   var isMind = $.inArray(currentExercise, currentMind);
 
@@ -102,8 +158,26 @@ function completed()
   {
     var arrayUpdate = currentBody.splice(isBody, 1);
 
-    currentCompleted.push(arrayUpdate);
-    localStorage.setItem("completedExercises", JSON.stringify(currentCompleted));
+    //currentCompleted.push(arrayUpdate);
+    lastEntry[2] = arrayUpdate;
+    var str = "";
+    for(var i = 0; i < lastEntry.length - 1; i++)
+    {
+      str += lastEntry[i] + " | ";
+    }
+    str += lastEntry[lastEntry.length - 1];
+
+    console.log("Last entry: " + lastEntry);
+
+    if(hasEntry || currentJournal.length == 1)
+    {
+      currentJournal[currentJournal.length - 1] = str;
+    }
+    else
+    {
+      currentJournal.push(str);
+    }
+    localStorage.setItem("journalDetails", JSON.stringify(currentJournal));
 
     if(currentBody.length != 0)
     {
@@ -130,14 +204,34 @@ function completed()
   else
   {
     var arrayUpdate = currentMind.splice(isMind, 1);
-    console.log(currentMind);
-    localStorage.setItem("mindExercises", JSON.stringify(currentMind));
-    currentCompleted.push(arrayUpdate);
-    localStorage.setItem("completedExercises", JSON.stringify(currentCompleted));
+
+    lastEntry[2] = arrayUpdate;
+    var str = "";
+    for(var i = 0; i < lastEntry.length - 1; i++)
+    {
+      str += lastEntry[i] + " | ";
+    }
+    str += lastEntry[lastEntry.length - 1];
+
+    if(hasEntry || currentJournal.length == 1)
+    {
+      currentJournal[currentJournal.length - 1] = str;
+    }
+    else
+    {
+      currentJournal.push(str);
+    }
+
+    localStorage.setItem("journalDetails", JSON.stringify(currentJournal));
+    //console.log(currentMind);
+
+    //localStorage.setItem("mindExercises", JSON.stringify(currentMind));
+    //currentCompleted.push(arrayUpdate);
+    //localStorage.setItem("completedExercises", JSON.stringify(currentCompleted));
 
     if(currentMind.length != 0)
     {
-      localStorage.setItem("bodyExercises", JSON.stringify(currentBody));
+      localStorage.setItem("mindExercises", JSON.stringify(currentMind));
        //alert($("#exerciseName").text() + "has been added to your journal!");
        $("#text").empty();
        $("#text").html($("#exerciseName").text() + "has been added to your journal!");
@@ -205,6 +299,14 @@ function nextActivity(num)
     $("body").pagecontainer( "change", "#activity");
 }
 
-
+function todaysDate()
+{
+  var dateObject = new Date();
+  var day = dateObject.getDate();
+  var month = dateObject.getMonth()+1;
+  var year = dateObject.getFullYear();
+  var completeDate = month + "/" + day + "/" + year;
+  return completeDate;
+}
 
 
