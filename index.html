@@ -200,9 +200,14 @@
 						<div class="descriptionCloud">
 							<p class="descriptionText"> Reflecting on three things you are happy about highlights the good in your life. </p>
 						</div>
+
+
 							<div class="moveUp">
+
                             
 								<select name="reflect1" class="select" data-native-menu=false id="reflect1">
+
+								<select onchange="isWrite(1);" name="reflect1" class="select" data-native-menu=false id="reflect1">
 										<option value="0">1. What Makes You Smile?</option>
 										<option value="1">Puppies!</option>
 										<option value="2">Mustaches :)</option>
@@ -210,7 +215,7 @@
 										<option value="4">Write Your Own</option>
 									</select>
 
-									<select data-native-menu=false id="reflect2">
+									<select onchange="isWrite(2);" data-native-menu=false id="reflect2">
 										<option value="0">2. Your Favorite Place?</option>
 										<option value="1">Lake Waban</option>
 										<option value="2">The Beach</option>
@@ -218,7 +223,7 @@
 										<option value="4">Write Your Own</option>
 									</select>
 
-									<select data-native-menu=false id="reflect3">
+									<select onchange="isWrite(3);" data-native-menu=false id="reflect3">
 										<option value="0">3. You're Thankful For?</option>
 										<option value="1">Friends</option>
 										<option value="2">Chocolate</option>
@@ -230,6 +235,15 @@
 					<a href="#reflectEdit" data-role="button" class="blueButton submitButton">Submit</a>
 				</div>
 
+				<div id="writePop" data-role="popup" style="width:270px">
+					<div data-role="header">Beef</div>
+					<div data-role="content">
+					<p>This is popup</p>
+				</div>
+				</div>
+
+				<div id="blank"></div>
+
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
 				<div data-role="controlgroup" data-type="horizontal" style="margin-left:5%; margin-bottom: 1px; margin-top: 1px;">
 						<a href="#guided" data-role="button" style="width: 70px; border-color: #e1c335 ;  background-color: #fff">1. Choose</a>
@@ -237,7 +251,6 @@
 						<a href="#" class="ui-btn-active" data-role="button" style="width: 70px; border-color: #e1c335; border-left-color: #e1c335;">3. Reflect</a>
 				</div>
 			</div>
-
 		</div>
 
 		<!--- This is the Reflect Edit Page -->
@@ -452,10 +465,10 @@
 				<div class="descriptionCloud">
 					<p class="descriptionText"> Write whatever you feel like! This is your positivity journal. </p>
 				</div>
-					<textarea  onclick="this.value='';" onblur="if(this.value== ''){ this.value='What are you happy about?'; }" class="entry moveUp">What are you happy about?</textarea>
+					<textarea id="writeEntry" onclick="this.value='';" onblur="if(this.value== ''){ this.value='What are you happy about?'; }" class="entry moveUp">What are you happy about?</textarea>
 
 
-					<a href="#" data-role="button" class="blueButton submitButton">Submit</a>
+					<a href="#" onclick="javascript:evaluateWrite();" data-role="button" class="blueButton submitButton">Submit</a>
 
 
 
@@ -595,7 +608,7 @@
     						//we have disabled scrolling. This makes it so that touching the screen won't move the page up and down
     						//on screens that have no need to move. Especially this is important for the page with the maze, because
     						//if the screen moved whenever you tried to touch the page it would be very annoying.
-    						if(pageId == "journal" || pageId =="exercises1" || pageId == "exercises2" || pageId == "journalEntry" || pageId == "reflectEdit")
+    						if(pageId == "journal" || pageId =="exercises1" || pageId == "exercises2" || pageId == "journalEntry" || pageId == "reflectEdit" || pageId =="reflect")
     						{
     							document.removeEventListener('touchmove', preventDefault, false);
     						}
