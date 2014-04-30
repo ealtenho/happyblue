@@ -230,15 +230,6 @@
 					<a href="#reflectEdit" data-role="button" class="blueButton submitButton">Submit</a>
 				</div>
 
-				<div id="writePop" data-role="popup" style="width:270px">
-					<div data-role="header">Beef</div>
-					<div data-role="content">
-					<p>This is popup</p>
-				</div>
-				</div>
-
-				<div id="blank"></div>
-
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
 				<div data-role="controlgroup" data-type="horizontal" style="margin-left:5%; margin-bottom: 1px; margin-top: 1px;">
 						<a href="#guided" data-role="button" style="width: 70px; border-color: #e1c335 ;  background-color: #fff">1. Choose</a>
@@ -460,7 +451,7 @@
 				<div class="descriptionCloud">
 					<p class="descriptionText"> Write whatever you feel like! This is your positivity journal. </p>
 				</div>
-					<textarea id="writeEntry" onclick="this.value='';" onblur="if(this.value== ''){ this.value='What are you happy about?'; }" class="entry moveUp">What are you happy about?</textarea>
+					<textarea id="writeEntry" onclick="javascript:writePrepare();" onblur="if(this.value== ''){ this.value='What are you happy about?'; }" class="entry moveUp">What are you happy about?</textarea>
 
 
 					<a href="#" onclick="javascript:evaluateWrite();" data-role="button" class="blueButton submitButton">Submit</a>
