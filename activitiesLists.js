@@ -149,6 +149,12 @@ function completed()
   var lastEntry = currentJournal[currentJournal.length - 1].split("|");
   var hasEntry = true;
   var last = lastEntry[0].substring(0,9);
+  var isFirst = false;
+  if(last.indexOf("No") != -1)
+  {
+    isFirst = true;
+  }
+
   console.log("This is the last entry date: " + last);
   console.log(todaysDate());
   console.log("Is the last entry date equal: " + (last == todaysDate()));
@@ -181,7 +187,7 @@ function completed()
 
     console.log("Last entry: " + lastEntry);
 
-    if(hasEntry || currentJournal.length == 1)
+    if(hasEntry || isFirst)
     {
       currentJournal[currentJournal.length - 1] = str;
     }
@@ -322,4 +328,63 @@ function todaysDate()
   return completeDate;
 }
 
+function evaluateWrite()
+{
+  var div = $("#writeEntry");
+  div.removeClass('errorDisplay');
+  console.log("Div text = " + div.val());
+  if(div.val() == "What are you happy about?" || div.val() == "")
+  {
+    alert("Please correct the highlighted errors.");
+    div.addClass("errorDisplay");
+  }
+  else
+  {
+    var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
+    console.log("Current journal: " + currentJournal);
+     var lastEntry = currentJournal[currentJournal.length - 1].split("|");
+     var hasEntry = true;
+     var last = lastEntry[0].substring(0,9);
+     var isFirst = false;
+      if(last.indexOf("No") != -1)
+      {
+        isFirst = true;
+      }
+     console.log("This is the last entry date: " + last);
+     console.log(todaysDate());
+     console.log("Is the last entry date equal: " + (last == todaysDate()));
+     if(last != todaysDate())
+     {
+       hasEntry = false;
+       lastEntry = [todaysDate(), "", "", ""];
+     }
+
+     var arrayUpdate = "<br>" + div.val();
+
+    //currentCompleted.push(arrayUpdate);
+    lastEntry[3] = lastEntry[3] + arrayUpdate;
+    var str = "";
+    for(var i = 0; i < lastEntry.length - 1; i++)
+    {
+      str += lastEntry[i] + " | ";
+    }
+    str += lastEntry[lastEntry.length - 1];
+
+    console.log("Last entry: " + lastEntry);
+
+    if(hasEntry || isFirst)
+    {
+      currentJournal[currentJournal.length - 1] = str;
+    }
+    else
+    {
+      currentJournal.push(str);
+    }
+    localStorage.setItem("journalDetails", JSON.stringify(currentJournal));
+    alert("This entry has been added to your journal!");
+    div.val("What are you happy about?");
+    $("body").pagecontainer( "change", "#journal");
+    makeLists();
+  }
+ }
 
