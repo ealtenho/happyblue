@@ -140,5 +140,16 @@ function reEvaluate(){
   }
 }
 
+function reEvaluateSelect(){
+  console.log("reEvaluateSelect");
+  console.log(this);
+  if($('#reflect1 option:selected').text() != "1. What Makes You Smile?")
+  {
+    console.log(true);
+    $("#writeownmessage").val($('#reflect1 option:selected').text());
+    console.log("end");
+  }
+}
+
 
 

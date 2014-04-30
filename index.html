@@ -205,30 +205,27 @@
 							<div class="moveUp">
 
                             
-								<select name="reflect1" class="select" data-native-menu=false id="reflect1">
-
-								
+								<select onchange="reEvaluateSelect();" name="reflect1" class="select" data-native-menu=false id="reflect1">
 										<option value="0">1. What Makes You Smile?</option>
 										<option value="1">Puppies!</option>
 										<option value="2">Mustaches :)</option>
 										<option value="3">Bananas</option>
-										<option value="4">Write Your Own</option>
 									</select>
+                                    <textarea style="margin-top:-10px !important" name="writeownmessage" id="writeownmessage"  onclick="if(this.value=='Or Write Your Own.'){ this.value = '';}" onblur="if(this.value== ''){ this.value='Or Write Your Own.'; }">Write Your Own</textarea>
 
-									<select onchange="isWrite(2);" data-native-menu=false id="reflect2">
+									<select onchange="reEvaluateSelect();" data-native-menu=false id="reflect2">
 										<option value="0">2. Your Favorite Place?</option>
 										<option value="1">Lake Waban</option>
 										<option value="2">The Beach</option>
 										<option value="3">Hawaii</option>
-										<option value="4">Write Your Own</option>
 									</select>
+                                    
 
-									<select onchange="isWrite(3);" data-native-menu=false id="reflect3">
+									<select onchange="reEvaluateSelect();" data-native-menu=false id="reflect3">
 										<option value="0">3. You're Thankful For?</option>
 										<option value="1">Friends</option>
 										<option value="2">Chocolate</option>
 										<option value="3">Family</option>
-										<option value="4">Write Your Own</option>
 									</select>
 								</div>
                                 
