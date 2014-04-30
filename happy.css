@@ -335,3 +335,14 @@ float: right;
   font-size: 12px !important;
   margin-left: 40px;
 }
+
+#exerciseDescription {
+  width: 240px;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.previous {
+  display:inline;
+  float:left;
+}

@@ -482,13 +482,13 @@
 					<p class="descriptionText"> Here are your HappyBlue reflections, activities and entries from this date.</p>
 				</div>
 				<div class="moveUp">
-					<h2> 3/14/14 </h2>
+					<h2 id="journalDate"> 3/14/14 </h2>
 					<h2>Reflections:</h2>
-					<p> Puppies make me smile. My favorite place is Lake Waban. I'm thankful for my family. </p>
+					<p id="reflectionData"> Puppies make me smile. My favorite place is Lake Waban. I'm thankful for my family. </p>
 					<h2>Activities:</h2>
-					<p> I did the activity "Savor: Eat Your Favorite Food Slowly."</p>
+					<p id="activityData"> I did the activity "Savor: Eat Your Favorite Food Slowly."</p>
 					<h2>Entries:</h2>
-					<p>I started using happy blue and I like it!</p>
+					<p id="writingData">I started using happy blue and I like it!</p>
 				</div>
 
 			</div>
@@ -513,12 +513,15 @@
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
-					<p class="descriptionText"> Don't like this activity? Click the arrow for another. Completed this activity? Click to add it to your journal.</p>
+					<p class="descriptionText"> Click the arrows to see other exercises. When you complete an exercise, click to add it to your journal.</p>
 				</div>
 
 				<div class="moveUp">
 
-						<h2 class="heading"><div id="exerciseName">Exercise Name</div><a href="#" class="next" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a></h2>
+						<h2 class="heading"><div id="exerciseName">Exercise Name</div></h2>
+
+						<a href="#" class="previous" onclick="javascript:nextActivity(-1);" data-role="button" data-icon="carat-l" data-iconpos="notext"></a>
+						<a href="#" class="next" onclick="javascript:nextActivity(1);" data-role="button" data-icon="carat-r" data-iconpos="notext"></a>
 
 						<p id="exerciseDescription">Exercise Description</p>
 
@@ -534,7 +537,7 @@
 					<div data-role="navbar" style="width:278px">
 						<ul>
 							<li><a href="#exercises1">Ok</a></li>
-							<li><a href="#journal">Open Journal</a></li>
+							<li ><a href="#journal" style="margin-right: 0px;">Open Journal</a></li>
 						</ul>
 					</div>
 				</div>
