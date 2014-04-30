@@ -129,13 +129,13 @@ function timer()
 
 
 
-function reEvaluate(){
+function reEvaluate(selector, toFill){
   console.log("reEvaluate");
   console.log(this);
-  if($('#message option:selected').text() != "Choose message...")
+  if($('#' + selector + ' option:selected').text() != "Choose message...")
   {
     console.log(true);
-    $("#writeown").val($('#message option:selected').text());
+    $("#" + toFill).val($('#' + selector + ' option:selected').text());
     console.log("end");
   }
 }

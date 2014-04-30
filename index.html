@@ -205,7 +205,7 @@
 							<div class="moveUp">
 
 
-								
+
 										<option value="0">1. What Makes You Smile?</option>
 										<option value="1">Puppies!</option>
 										<option value="2">Mustaches :)</option>
@@ -268,7 +268,7 @@
 							<input type="text" id="question3" value="Family" />
 			 </div>
 
-			 <a href="#" data-role="button" class="blueButton submitButton" onclick="alert('Your journal has been updated'); $('body').pagecontainer( 'change', '#home' );" >Confirm</a>
+			 <a href="#" data-role="button" class="blueButton submitButton" onclick="javascript:saveToJournal();" >Confirm</a>
 
 			</div>
 
@@ -303,8 +303,8 @@
 						<input style="" type="email" name="email" id="email" value="Recipient Email Address" onclick="javascript:errorOff();" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }" />
 			  </div>
 
-				<div onclick="console.log('click'); $('#message-button').removeClass('errorDisplayButton'); reEvaluate();" >
-							<select onchange="reEvaluate();" data-native-menu=false id="message">
+				<div onclick="console.log('click'); $('#message-button').removeClass('errorDisplayButton'); reEvaluate('message', 'writeown');" >
+							<select onchange="reEvaluate('message', 'writeown');" data-native-menu=false id="message">
 
 										<option value="0">Choose message...</option>
 										<option value="1">You are a star!</option>
