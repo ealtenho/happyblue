@@ -1,4 +1,5 @@
 
+
 // function clearBox(){
 
 //   console.log($('input[name=userEmail]', '#userEmail').val());
@@ -129,27 +130,15 @@ function timer()
 
 
 
-function reEvaluate(){
+function reEvaluate(selector, toFill){
   console.log("reEvaluate");
   console.log(this);
-  if($('#message option:selected').text() != "Choose message...")
+  if($('#' + selector + ' option:selected').text() != "Choose message...")
   {
     console.log(true);
-    $("#writeown").val($('#message option:selected').text());
+    $("#" + toFill).val($('#' + selector + ' option:selected').text());
     console.log("end");
   }
 }
-
-function reEvaluateSelect(){
-  console.log("reEvaluateSelect");
-  console.log(this);
-  if($('#reflect1 option:selected').text() != "1. What Makes You Smile?")
-  {
-    console.log(true);
-    $("#writeownmessage").val($('#reflect1 option:selected').text());
-    console.log("end");
-  }
-}
-
 
 

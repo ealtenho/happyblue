@@ -331,7 +331,6 @@ function todaysDate()
 function evaluateWrite()
 {
   var div = $("#writeEntry");
-  div.removeClass('errorDisplay');
   console.log("Div text = " + div.val());
   if(div.val() == "What are you happy about?" || div.val() == "")
   {

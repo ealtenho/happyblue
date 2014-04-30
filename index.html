@@ -204,8 +204,10 @@
 
 							<div class="moveUp">
 
+
                             
-								<select onchange="reEvaluateSelect();" name="reflect1" class="select" data-native-menu=false id="reflect1">
+								<select onchange="reEvaluate(['reflect1', 'writeownmessage');" name="reflect1" class="select" data-native-menu=false id="reflect1">
+
 										<option value="0">1. What Makes You Smile?</option>
 										<option value="1">Puppies!</option>
 										<option value="2">Mustaches :)</option>
@@ -213,7 +215,7 @@
 									</select>
                                     <textarea style="margin-top:-10px !important" name="writeownmessage" id="writeownmessage"  onclick="if(this.value=='Or Write Your Own.'){ this.value = '';}" onblur="if(this.value== ''){ this.value='Or Write Your Own.'; }">Write Your Own</textarea>
 
-									<select onchange="reEvaluateSelect();" data-native-menu=false id="reflect2">
+									<select onchange="reEvaluate();" data-native-menu=false id="reflect2">
 										<option value="0">2. Your Favorite Place?</option>
 										<option value="1">Lake Waban</option>
 										<option value="2">The Beach</option>
@@ -221,25 +223,16 @@
 									</select>
                                     
 
-									<select onchange="reEvaluateSelect();" data-native-menu=false id="reflect3">
+									<select onchange="reEvaluate();" data-native-menu=false id="reflect3">
 										<option value="0">3. You're Thankful For?</option>
 										<option value="1">Friends</option>
 										<option value="2">Chocolate</option>
 										<option value="3">Family</option>
 									</select>
 								</div>
-                                
+
 					<a href="#reflectEdit" data-role="button" class="blueButton submitButton">Submit</a>
 				</div>
-
-				<div id="writePop" data-role="popup" style="width:270px">
-					<div data-role="header">Beef</div>
-					<div data-role="content">
-					<p>This is popup</p>
-				</div>
-				</div>
-
-				<div id="blank"></div>
 
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
 				<div data-role="controlgroup" data-type="horizontal" style="margin-left:5%; margin-bottom: 1px; margin-top: 1px;">
@@ -276,7 +269,7 @@
 							<input type="text" id="question3" value="Family" />
 			 </div>
 
-			 <a href="#" data-role="button" class="blueButton submitButton" onclick="alert('Your journal has been updated'); $('body').pagecontainer( 'change', '#home' );" >Confirm</a>
+			 <a href="#" data-role="button" class="blueButton submitButton" onclick="javascript:saveToJournal();" >Confirm</a>
 
 			</div>
 
@@ -311,8 +304,8 @@
 						<input style="" type="email" name="email" id="email" value="Recipient Email Address" onclick="javascript:errorOff();" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }" />
 			  </div>
 
-				<div onclick="console.log('click'); $('#message-button').removeClass('errorDisplayButton'); reEvaluate();" >
-							<select onchange="reEvaluate();" data-native-menu=false id="message">
+				<div onclick="console.log('click'); $('#message-button').removeClass('errorDisplayButton'); reEvaluate('message', 'writeown');" >
+							<select onchange="reEvaluate('message', 'writeown');" data-native-menu=false id="message">
 
 										<option value="0">Choose message...</option>
 										<option value="1">You are a star!</option>
@@ -462,7 +455,9 @@
 				<div class="descriptionCloud">
 					<p class="descriptionText"> Write whatever you feel like! This is your positivity journal. </p>
 				</div>
-					<textarea id="writeEntry" onclick="this.value='';" onblur="if(this.value== ''){ this.value='What are you happy about?'; }" class="entry moveUp">What are you happy about?</textarea>
+					<div onclick ="$('#writeEntry').removeClass('errorDisplay');">
+					<textarea id="writeEntry" onclick="if(this.value == 'What are you happy about?'){ this.value = ''}; $('#writeEntry').removeClass('errorDisplay');" onblur="if(this.value== ''){ this.value='What are you happy about?'; }" class="entry moveUp">What are you happy about?</textarea>
+				</div>
 
 
 					<a href="#" onclick="javascript:evaluateWrite();" data-role="button" class="blueButton submitButton">Submit</a>
