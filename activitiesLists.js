@@ -328,17 +328,6 @@ function todaysDate()
   return completeDate;
 }
 
-function writePrepare()
-{
-  console.log("writePrepare");
-  var div = $("#writeEntry");
-  if(div.value == "What are you happy about?")
-  {
-    this.value='';
-  }
-  div.removeClass('errorDisplay');
-}
-
 function evaluateWrite()
 {
   var div = $("#writeEntry");
