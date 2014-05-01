@@ -32,13 +32,13 @@
 // }
 
 //This is the code I used to turn on and off the error highlighting
-function errorOff(event)
+function errorOff(divName)
 {
   console.log('click');
-  $('#email').removeClass('errorDisplay');
-  if($('#email').val() =='Recipient Email Address')
+  $("" + divName).removeClass('errorDisplay');
+  if($("" + divName).val() =='Recipient Email Address')
   {
-    $('#email').val("");
+    $("" + divName).val("");
   }
 }
 

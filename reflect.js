@@ -9,37 +9,57 @@
 
 //4) If the input is good, we need to save that reflection to local storage to use in the journal
 
-
-<<<<<<< HEAD
-
 function saveToJournal() {
 
   var response1 = $("#question1").val();
   var response2 = $("#question2").val();
   var response3 = $("#question3").val();
 
-  for(int i = 1; i <= 3; i++)
+  var errors = false;
+  for(var i = 1; i <= 3; i++)
   {
-    if($("#question" + i).val(); == "")
+    if($("#question" + i).val() == "")
     {
+      errors = true;
       $("#question" + i).addClass("errorDisplay");
     }
   }
 
-  var entries = response1 + "<br>" + response2 + "<br>" + response3;
+  if(!errors)
+  {
+  var entries = "Something that made me smile is: " + response1 + "<br> Somewhere I like to go is:" + response2 + "<br> Something I am thankful for is:" + response3;
   journalSave(1, entries);
+  $("#openJournalReflect").popup("open");
+  makeLists();
+  }
+  else {
+    alert("Please fix the highlighted errors.");
+  }
 }
 
 function submitToEdit() {
 
+  var errors = false;
   for(var i = 1; i <= 3; i++)
   {
-    if($('#writeownmessage' + i).val() == "Write Your Own" || $('#writeownmessage' + i).val() == ""))
+    if($('#writeownmessage' + i).val() == "Write Your Own" || $('#writeownmessage' + i).val() == "")
     {
+      errors = true;
       $('#writeownmessage' + i).addClass("errorDisplay");
     }
     else
     {
       $("#question" + i).val($("#writeownmessage" + i).val());
+
     }
+  }
+
+  if(!errors)
+  {
+    $("body").pagecontainer( "change", "#reflectEdit" );
+  }
+  else {
+    alert("Please fix the highlighted errors.");
+  }
+
 }

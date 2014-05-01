@@ -93,7 +93,7 @@ function fillJournal(divName, arr, link)
   div.empty();
 
 
-  for(var i = 0; i < arr.length - 1; i++)
+  for(var i = arr.length - 1; i >= 0; i--)
   {
     current = arr[i];
     div.append("<li><a href=\"#\" onclick=\"javascript:journalPage('" + arr[i] +"')\" class=\"ul-link-inherit ui-btn ui-icon-happy-chevron\"><h3 class=\"ul-li-heading\">"+ current.split("|")[0] + "</h3></a></li>");
