@@ -10,7 +10,7 @@
 //4) If the input is good, we need to save that reflection to local storage to use in the journal
 
 
-
+/*
 function saveToJournal {
   var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
     console.log("Current journal: " + currentJournal);
@@ -58,4 +58,4 @@ function saveToJournal {
     alert("This reflection has been added to your journal!");
     $("body").pagecontainer( "change", "#home");
     makeLists();
-}
+}*/
