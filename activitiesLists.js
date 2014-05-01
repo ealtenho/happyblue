@@ -296,9 +296,9 @@ function journalSave(type, value)
         console.log("Is first");
         isFirst = true;
       }
-     console.log("This is the last entry date: " + last);
-     console.log(todaysDate());
-     console.log("Is the last entry date equal: " + (last == todaysDate()));
+     //console.log("This is the last entry date: " + last);
+     //console.log(todaysDate());
+     //console.log("Is the last entry date equal: " + (last == todaysDate()));
     // console.log(last);
     // console.log(todaysDate());
      if(last != todaysDate())
