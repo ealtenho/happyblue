@@ -12,6 +12,7 @@
 
 /*
 function saveToJournal {
+
   var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
     console.log("Current journal: " + currentJournal);
      var lastEntry = currentJournal[currentJournal.length - 1].split("|");
