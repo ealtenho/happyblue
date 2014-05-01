@@ -10,6 +10,7 @@
 //4) If the input is good, we need to save that reflection to local storage to use in the journal
 
 
+<<<<<<< HEAD
 
 function saveToJournal() {
 
