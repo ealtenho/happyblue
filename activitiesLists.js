@@ -143,28 +143,6 @@ function completed()
   var currentBody = JSON.parse(localStorage.getItem("bodyExercises"));
   var currentMind = JSON.parse(localStorage.getItem("mindExercises"));
 
-  //Dealing with the journal
-  var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
-  console.log("Current journal: " + currentJournal);
-  var lastEntry = currentJournal[currentJournal.length - 1].split("|");
-  var hasEntry = true;
-  var last = lastEntry[0].substring(0,9);
-  var isFirst = false;
-  if(last.indexOf("No") != -1)
-  {
-    isFirst = true;
-  }
-
-  console.log("This is the last entry date: " + last);
-  console.log(todaysDate());
-  console.log("Is the last entry date equal: " + (last == todaysDate()));
-  if(last != todaysDate())
-  {
-    hasEntry = false;
-    lastEntry = [todaysDate(), "", "", ""];
-  }
-
-
   var isBody = $.inArray(currentExercise, currentBody);
   var isMind = $.inArray(currentExercise, currentMind);
 
@@ -174,28 +152,8 @@ function completed()
   var currentCompleted = JSON.parse(localStorage.getItem("completedExercises"));
   if(isBody != -1)
   {
-    var arrayUpdate = "<br>" + currentBody.splice(isBody, 1);
-
-    //currentCompleted.push(arrayUpdate);
-    lastEntry[2] = lastEntry[2] + arrayUpdate;
-    var str = "";
-    for(var i = 0; i < lastEntry.length - 1; i++)
-    {
-      str += lastEntry[i] + " | ";
-    }
-    str += lastEntry[lastEntry.length - 1];
-
-    console.log("Last entry: " + lastEntry);
-
-    if(hasEntry || isFirst)
-    {
-      currentJournal[currentJournal.length - 1] = str;
-    }
-    else
-    {
-      currentJournal.push(str);
-    }
-    localStorage.setItem("journalDetails", JSON.stringify(currentJournal));
+    //var arrayUpdate = "<br>" + currentBody.splice(isBody, 1);
+    journalSave(2, currentBody.splice(isBody, 1));
 
     if(currentBody.length != 0)
     {
@@ -221,31 +179,8 @@ function completed()
   }
   else
   {
-    var arrayUpdate = "<br>" + currentMind.splice(isMind, 1);
-
-    lastEntry[2] = lastEntry[2] + arrayUpdate;
-    var str = "";
-    for(var i = 0; i < lastEntry.length - 1; i++)
-    {
-      str += lastEntry[i] + " | ";
-    }
-    str += lastEntry[lastEntry.length - 1];
-
-    if(hasEntry || currentJournal.length == 1)
-    {
-      currentJournal[currentJournal.length - 1] = str;
-    }
-    else
-    {
-      currentJournal.push(str);
-    }
-
-    localStorage.setItem("journalDetails", JSON.stringify(currentJournal));
-    //console.log(currentMind);
-
-    //localStorage.setItem("mindExercises", JSON.stringify(currentMind));
-    //currentCompleted.push(arrayUpdate);
-    //localStorage.setItem("completedExercises", JSON.stringify(currentCompleted));
+    //var arrayUpdate = "<br>" + currentMind.splice(isMind, 1);
+    journalSave(2, currentMind.splice(isMind, 1));
 
     if(currentMind.length != 0)
     {
@@ -339,29 +274,43 @@ function evaluateWrite()
   }
   else
   {
-    var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
-    console.log("Current journal: " + currentJournal);
+    journalSave(3, div.val());
+    alert("This entry has been added to your journal!");
+    div.val("What are you happy about?");
+    $("body").pagecontainer( "change", "#journal");
+    makeLists();
+  }
+ }
+
+function journalSave(type, value)
+{
+     var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
+     //console.log("Current journal: " + currentJournal);
+
      var lastEntry = currentJournal[currentJournal.length - 1].split("|");
      var hasEntry = true;
-     var last = lastEntry[0].substring(0,9);
+     var last = lastEntry[0].substring(0,8);
      var isFirst = false;
       if(last.indexOf("No") != -1)
       {
+        console.log("Is first");
         isFirst = true;
       }
      console.log("This is the last entry date: " + last);
      console.log(todaysDate());
      console.log("Is the last entry date equal: " + (last == todaysDate()));
+    // console.log(last);
+    // console.log(todaysDate());
      if(last != todaysDate())
      {
        hasEntry = false;
        lastEntry = [todaysDate(), "", "", ""];
+       console.log("This is not the same day");
      }
 
-     var arrayUpdate = "<br>" + div.val();
+    var arrayUpdate = "<br>" + value;
 
-    //currentCompleted.push(arrayUpdate);
-    lastEntry[3] = lastEntry[3] + arrayUpdate;
+    lastEntry[type] = lastEntry[type] + arrayUpdate;
     var str = "";
     for(var i = 0; i < lastEntry.length - 1; i++)
     {
@@ -380,10 +329,4 @@ function evaluateWrite()
       currentJournal.push(str);
     }
     localStorage.setItem("journalDetails", JSON.stringify(currentJournal));
-    alert("This entry has been added to your journal!");
-    div.val("What are you happy about?");
-    $("body").pagecontainer( "change", "#journal");
-    makeLists();
-  }
- }
-
+}
