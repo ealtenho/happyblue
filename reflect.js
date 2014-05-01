@@ -27,7 +27,7 @@ function saveToJournal() {
 
   if(!errors)
   {
-  var entries = "Something that made me smile is: " + response1 + "<br> Somewhere I like to go is:" + response2 + "<br> Something I am thankful for is:" + response3;
+  var entries = "Something that made me smile was: " + response1 + "<br> Somewhere I liked to go was: " + response2 + "<br> Something I was thankful for was: " + response3;
   journalSave(1, entries);
   $("#openJournalReflect").popup("open");
   makeLists();
