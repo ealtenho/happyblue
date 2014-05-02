@@ -60,8 +60,24 @@ and battery life at the top **/
   background-repeat: no-repeat;
 }
 
+.descriptionCloudShort {
+  margin-top: -20px;
+  height: 200px;
+  background-image: url("cloud_short.png");
+  background-size: 280px;
+  background-repeat: no-repeat;
+}
+
 .descriptionText {
   padding-top: 25px;
+  width: 200px;
+  margin-left: 35px;
+  text-align: center;
+  color: #004990;
+}
+
+.descriptionTextReflectEdit {
+  padding-top: 18px;
   width: 200px;
   margin-left: 35px;
   text-align: center;
@@ -301,6 +317,14 @@ float: right;
 
 .moveUp {
   margin-top: -50px !important;
+}
+
+.moveUpReflect {
+  margin-top: -100px !important;
+}
+
+.moveUpReflectEdit {
+  margin-top: -120px !important;
 }
 
 .submitButton {
