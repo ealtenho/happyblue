@@ -194,6 +194,14 @@ margin-left: 5px;
 background-position:center;
 }
 
+#editButton {
+background-image: url(Eraser-128.png);
+background-size: 25px;
+background-repeat: no-repeat;
+margin-left: 5px;
+background-position:center;
+}
+
 #writeButton {
 background-image: url(027copy.png);
 background-size: 25px;

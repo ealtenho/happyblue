@@ -63,3 +63,11 @@ function submitToEdit() {
   }
 
 }
+
+function journalEdit(){
+  var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
+  var viewedEntry = $("journalDate").text();
+  console.log("I'm editing" + viewedEntry);
+  var date = $.inArray(viewedEntry, currentJournal);
+  console.log(currentJournal[date] + " ");
+}

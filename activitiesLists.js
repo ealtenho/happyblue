@@ -93,17 +93,17 @@ function fillJournal(divName, arr, link)
   div.empty();
 
 
-  for(var i = arr.length - 1; i >= 0; i--)
+  for(var i = arr.length - 1; i > 0; i--)
   {
     current = arr[i];
     div.append("<li><a href=\"#\" onclick=\"javascript:journalPage('" + arr[i] +"')\" class=\"ul-link-inherit ui-btn ui-icon-happy-chevron\"><h3 class=\"ul-li-heading\">"+ current.split("|")[0] + "</h3></a></li>");
   }
-  current = arr[arr.length - 1];
+  current = arr[0];
   console.log(current);
   if(current != undefined)
   {
-    console.log("Parameter: " + arr[i]);
-    div.append("<li class=\" ui-last-child\"><a href=\"#\" onclick=\"javascript:journalPage('" + arr[i] +"')\" class=\"ul-link-inherit ui-btn ui-icon-happy-chevron\"><h3 class=\"ul-li-heading\">"+ current.split("|")[0] + "</h3></a></li>");
+    console.log("Parameter: " + arr[0]);
+    div.append("<li class=\" ui-last-child\"><a href=\"#\" onclick=\"javascript:journalPage('" + arr[0] +"')\" class=\"ul-link-inherit ui-btn ui-icon-happy-chevron\"><h3 class=\"ul-li-heading\">"+ current.split("|")[0] + "</h3></a></li>");
   }
 }
 
