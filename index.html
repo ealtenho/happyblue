@@ -213,7 +213,7 @@
 										<option value="2">Mustaches :)</option>
 										<option value="3">Bananas</option>
 									</select>
-                                    <textarea style="margin-top:-10px !important" name="writeownmessage1" id="writeownmessage1"  onclick="if(this.value=='Write Your Own'){ this.value = '';}" onblur="if(this.value== ''){ this.value='Write Your Own'; }">Write Your Own</textarea>
+                                    <textarea style="margin-top:-10px !important; height: 40px !important;" name="writeownmessage1" id="writeownmessage1"  onclick="if(this.value=='Write Your Own'){ this.value = '';}" onblur="if(this.value== ''){ this.value='Write Your Own'; }">Write Your Own</textarea>
                 </div>
 
                 <div onclick="javascript:errorOff('#writeownmessage2');">
@@ -223,7 +223,7 @@
 										<option value="2">The Beach</option>
 										<option value="3">Hawaii</option>
 									</select>
-									<textarea style="margin-top:-10px !important" name="writeownmessage2" id="writeownmessage2"  onclick="if(this.value=='Write Your Own'){ this.value = '';}" onblur="if(this.value== ''){ this.value='Write Your Own'; }">Write Your Own</textarea>
+									<textarea style="margin-top:-10px !important;" name="writeownmessage2" id="writeownmessage2"  onclick="if(this.value=='Write Your Own'){ this.value = '';}" onblur="if(this.value== ''){ this.value='Write Your Own'; }">Write Your Own</textarea>
 								</div>
 
 								<div onclick="javascript:errorOff('#writeownmessage3');">
@@ -312,7 +312,7 @@
 						<div class="ui-grid-b" id="headerSpace">
 
 								<div class="ui-block-a"><a href="#home" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
-								<div class="ui-block-b" id="headerText">Send</div>
+								<div class="ui-block-b" id="headerText">Send Note</div>
 								<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
 						</div><!-- /grid-b -->
 					</div>
@@ -366,7 +366,7 @@
 			<div class="ui-grid-b" id="headerSpace">
 
 					<div class="ui-block-a"><a href="#home" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
-					<div class="ui-block-b" id="headerText">Exercises</div>
+					<div class="ui-block-b" id="headerText">Do Exercise</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
 				</div><!-- /grid-b -->
 				</div>
@@ -400,7 +400,7 @@
 			<div class="ui-grid-b" id="headerSpace">
 
 					<div class="ui-block-a"><a href="#home" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
-					<div class="ui-block-b" id="headerText">Exercises</div>
+					<div class="ui-block-b" id="headerText">Do Exercise</div>
 					<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
 				</div><!-- /grid-b -->
 				</div>
@@ -523,7 +523,7 @@
 			</div>
 
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
-				<div class="shortcutFooter" id="journalButton"><a href="#write" id="label"><span class="shortcutSpan"></span>Write</a></div>
+				<div class="shortcutFooter" id="writeButton"><a href="#write" id="label"><span class="shortcutSpan"></span>Write</a></div><div class="shortcutFooter" id="editButton"><a href="#editEntry" id="label"><span class="shortcutSpan"></span>Edit</a></div>
 			</div>
 		</div>
 
