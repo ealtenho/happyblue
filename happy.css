@@ -198,7 +198,7 @@ background-position:center;
 background-image: url(Eraser-128.png);
 background-size: 25px;
 background-repeat: no-repeat;
-margin-left: 5px;
+margin-left: 210px;
 background-position:center;
 }
 
@@ -366,6 +366,13 @@ float: right;
   text-decoration: none !important;
   font-size: 12px !important;
   margin-left: 40px;
+}
+
+#label2 {
+  text-decoration: none !important;
+  font-size: 12px !important;
+  margin-left: -35px;
+  margin-top: -20px;
 }
 
 #exerciseDescription {
