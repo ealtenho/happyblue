@@ -103,22 +103,26 @@ function fillJournal(divName, arr, link)
   if(current != undefined)
   {
     console.log("Parameter: " + arr[0]);
-    div.append("<li class=\" ui-last-child\"><a href=\"#\" onclick=\"javascript:journalPage('" + arr[0] +"')\" class=\"ul-link-inherit ui-btn ui-icon-happy-chevron\"><h3 class=\"ul-li-heading\">"+ current.split("|")[0] + "</h3></a></li>");
+    div.append("<li class=\" ui-last-child\"><a href=\"#\" onclick=\"javascript:journalPage('" + arr[0] + "')\" class=\"ul-link-inherit ui-btn ui-icon-happy-chevron\"><h3 class=\"ul-li-heading\">"+ current.split("|")[0] + "</h3></a></li>");
   }
 }
 
 function journalPage(journalDetail)
 {
-  event.preventDefault();
   //console.log(exerciseDetail);
+
+  journalPageHelper(journalDetail);
+  $("body").pagecontainer( "change", "#journalEntry" );
+}
+
+function journalPageHelper(journalDetail)
+{
   var journalDetails = journalDetail.split("|");
   //console.log(nameAndDescription);
   $("#journalDate").html(journalDetails[0]);
   $("#reflectionData").html(journalDetails[1]);
   $("#activityData").html(journalDetails[2]);
   $("#writingData").html(journalDetails[3]);
-  $("body").pagecontainer( "change", "#journalEntry" );
-
 }
 
 function exercisePage(exerciseDetail)
@@ -259,6 +263,14 @@ function todaysDate()
   var day = dateObject.getDate();
   var month = dateObject.getMonth()+1;
   var year = dateObject.getFullYear();
+
+  if(day<10){
+    day = '0' + day;
+  }
+
+  if(month < 10){
+    month = '0' + month;
+  }
   var completeDate = month + "/" + day + "/" + year;
   return completeDate;
 }
@@ -274,7 +286,7 @@ function evaluateWrite()
   }
   else
   {
-    journalSave(3, div.val());
+    journalSave(3, goodSyntax(div.val()));
     alert("This entry has been added to your journal!");
     div.val("What are you happy about?");
     $("body").pagecontainer( "change", "#journal");
@@ -289,7 +301,7 @@ function journalSave(type, value)
 
      var lastEntry = currentJournal[currentJournal.length - 1].split("|");
      var hasEntry = true;
-     var last = lastEntry[0].substring(0,8);
+     var last = lastEntry[0];
      var isFirst = false;
       if(last.indexOf("No") != -1)
       {
@@ -329,4 +341,11 @@ function journalSave(type, value)
       currentJournal.push(str);
     }
     localStorage.setItem("journalDetails", JSON.stringify(currentJournal));
+}
+
+function goodSyntax(value){
+ // value = encodeURI(value)
+  value = value.replace(/\n/g, "<br>");
+  console.log(encodeURI(value));
+  return value;
 }

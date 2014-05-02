@@ -1,36 +1,4 @@
 
-
-// function clearBox(){
-
-//   console.log($('input[name=userEmail]', '#userEmail').val());
-//   $('input[name=userEmail]', '#userEmail').val(" ");
-
-//   //$('input[name=userEmail]', '#userEmail').load('refresh.html #emptyDiv');
-//   console.log("This: " + $('input[name=userEmail]', '#send #userEmail').val());
-// }
-
-// function popupEmail(){
-//   var updated = updateEmail();
-//   if(updated){
-//     $("body").pagecontainer( "change", "#send" );
-//   }
-// }
-
-// function updateEmail() {
-//   var email = $('input[name=userEmail]', '#userEmail').val();
-
-//   if(email != ""){
-//     localStorage.setItem('userEmail', email);
-//     alert("Your email address has been updated!");
-//   }
-//   else
-//   {
-//     alert("Please enter a valid email address.");
-//     return false;
-//   }
-//   return true;
-// }
-
 //This is the code I used to turn on and off the error highlighting
 function errorOff(divName)
 {

@@ -518,19 +518,64 @@
 					<p class="descriptionText"> Here are your HappyBlue reflections, activities and entries from this date.</p>
 				</div>
 				<div class="moveUp">
-					<h2 id="journalDate"> 3/14/14 </h2>
+					<h2 id="journalDate"></h2>
 					<h2>Reflections:</h2>
-					<p id="reflectionData"> Puppies make me smile. My favorite place is Lake Waban. I'm thankful for my family. </p>
+					<p id="reflectionData"></p>
 					<h2>Activities:</h2>
-					<p id="activityData"> I did the activity "Savor: Eat Your Favorite Food Slowly."</p>
+					<p id="activityData"></p>
 					<h2>Entries:</h2>
-					<p id="writingData">I started using happy blue and I like it!</p>
+					<p id="writingData"></p>
 				</div>
 
 			</div>
 
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
-				<div class="shortcutFooter" id="writeButton"><a href="#write" id="label"><span class="shortcutSpan"></span>Write</a></div><div class="shortcutFooter" id="editButton"><a href="#editEntry" id="label"><div id="label2">Edit</div><span style="margin-right: -20px;" class="shortcutSpan"></span></a></div>
+				<div class="shortcutFooter" id="writeButton"><a href="#write" id="label"><span class="shortcutSpan"></span>Write</a></div><div class="shortcutFooter" id="editButton"><a href="#" onclick="javascript:journalEdit()" id="label"><div id="label2">Edit</div><span style="margin-right: -20px;" class="shortcutSpan"></span></a></div>
+			</div>
+		</div>
+
+		<!--- This is the Edit Journal Entry Page -->
+		<div data-role="page" data-theme="a" id="editEntry">
+
+			<div id="confirmEdit" data-role="popup" style="width:270px">
+					<p>Your updates have been saved!</p>
+					<div data-role="navbar" style="width:278px">
+						<ul>
+							<li><a href="#journalEntry">Ok</a></li>
+							<li ><a href="#editEntry" style="margin-right: 0px;">Continue Editing</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div data-role="header" data-position="fixed" class="whiteBackdrop">
+					<div class="ui-grid-b" id="headerSpace">
+
+								<div class="ui-block-a"><a href="#journal" data-rel="back"><span class="shortcutHeader" id="backButton" ></span></a></div>
+								<div class="ui-block-b" id="headerText">Journal</div>
+								<div class="ui-block-c"><a href="#home"><span class="shortcutHeader" id="homeButton"></span></a></div>
+					</div><!-- /grid-b -->
+				</div>
+
+			<div data-role="content" data-theme="a">
+				<div class="descriptionCloud">
+					<p class="descriptionText"> Here are your HappyBlue reflections, activities and entries from this date.</p>
+				</div>
+				<div class="moveUp">
+					<h2 id="journalDate"></h2>
+					<h2>Reflections:</h2>
+					<p id="reflectionDataEdit"></p>
+					<h2>Activities:</h2>
+					<p id="activityDataEdit"></p>
+					<h2>Entries:</h2>
+					<p id="writingDataEdit"></p>
+				</div>
+
+			</div>
+
+			<a href="javascript:editJournal()" data-role="button" class="blueButton">Submit</a>
+
+			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
+				<div class="shortcutFooter" id="writeButton"><a href="#write" id="label"><span class="shortcutSpan"></span>Write</a></div>
 			</div>
 		</div>
 

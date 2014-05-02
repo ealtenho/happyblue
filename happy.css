@@ -195,10 +195,10 @@ background-position:center;
 }
 
 #editButton {
-background-image: url(Eraser-128.png);
+background-image: url(eraser.png);
 background-size: 25px;
 background-repeat: no-repeat;
-margin-left: 210px;
+margin-left: 215px;
 background-position:center;
 }
 
@@ -371,7 +371,7 @@ float: right;
 #label2 {
   text-decoration: none !important;
   font-size: 12px !important;
-  margin-left: -35px;
+  margin-left: -40px;
   margin-top: -20px;
 }
 
