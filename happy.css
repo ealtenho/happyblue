@@ -51,6 +51,23 @@ and battery life at the top **/
   background-position: 6% 47%;
 }
 
+a.ui-btn-active.ui-link.ui-btn.ui-icon-mindWhite.ui-btn-icon-left.ui-shadow.ui-corner-all.ui-first-child::after {
+  background-color: transparent !important;
+}
+
+a.ui-btn-active.ui-link.ui-btn.ui-icon-bodyWhite.ui-btn-icon-right.ui-shadow.ui-corner-all.ui-last-child::after {
+  background-color: transparent !important;
+}
+
+a.ui-link.ui-btn.ui-icon-bodyBlack.ui-btn-icon-right.ui-shadow.ui-corner-all.ui-last-child::after {
+  background-color: transparent !important;
+}
+
+a.ui-link.ui-btn.ui-icon-mind.ui-btn-icon-left.ui-shadow.ui-corner-all.ui-first-child::after {
+  background-color: transparent !important;
+}
+
+
 .ui-icon-mindWhite {
   background-image: url("mindWhite.png");
   background-size: 20px 20px;
@@ -65,9 +82,9 @@ and battery life at the top **/
   background-position: 95% 47%;
 }
 
-.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {
+/*.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {
 background-color: transparent !important;
-}
+}*/
 
 .ui-icon-bodyBlack {
   background-image: url("body.png");
@@ -205,9 +222,9 @@ margin-left: 70px;
 
 #playChooseButton {
 background-image: url(mazeGame.png);
-background-size: 50px;
+background-size: contain;
 background-repeat: no-repeat;
-background-position: -3px 0px;
+background-position: 0px 0px;
 margin-left: 70px;
 }
 

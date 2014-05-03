@@ -3,8 +3,8 @@
 //When they have done the exercise, we would take it from the possible activities array and move it to the completed exercises array.
 //We should also have two separate arrays if we want to split into mind and body
 //This is a testing array of activities to populate the list:
-var bodyExercises = ["Move : This is the move description. I am using a colon separation syntax.", "Play : This is another test of colon separation syntax.", "Explore : These exercises need both a name and a description for my logic to work."];
-var mindExercises = ["Savor : Go to the dining hall and find the best food or dessert there. Eat it slowly, realizing how much you appreciate every bite.", "Sleep : Take a power nap for twenty minutes to refresh yourself.", "Learn : Google positive psychology to learn more about improving your happiness."];
+var bodyExercises = ["Move : Exercise releases endorphins. Hit the gym, walk around the lake, or take ten minutes to walk a circuit wherever you are.", "Invigorate : Jump start yourself by drinking a cold glass of water or going outside for a minute or two to get fresh air.", "Soothe : Streching decreases soreness and can help you wake up. Roll your shoulders back, strech out your arms and legs, or just sit up straight! Any of these can increase your blood flow and attentiveness.", "Rehabiltate : If your body is telling you that it is tired, listen to that message. Help your body recover by drinking green tea with honey or one of your favorite home remedies.", "Utilize : Aromas can be great de-stressors! Try finding smelling scents like lavendar or chamomile if you are stressed. The scents can often be found in tea or lotion. These aromas can lessen anxiety.", "Enjoy : What are the best things about your current state of health? Do you love how your legs look? Have you been sickness-free for the last month? Did you just make it up the stairs without getting out of breath? Focus on the good by listing things you enjoy about your health."];
+var mindExercises = ["Vent : Use one minute to just vent about everything that is making you tense. Then separate yourself from those thoughts and go back to what you were doing.", "Savor : Go to the dining hall and find the best food or dessert there. Eat it slowly, realizing how much you appreciate every bite.", "Hope : Identify three missed opportunities in your life. When you lost those opportunities, did different ones arise? How can you use optimism to get new opportunities in the future?", "Release : Take a piece of paper and draw a frown in the middle of it. By the frown, write something negative that is bothering you. Then fill the rest of the page with smiles and positive things. Next, hold the page at arms distance and realize how small the frown is in perspective.", "Sleep : Take a power nap for twenty minutes to refresh yourself. Sleep deprivation can have the same effect on the brain as a high blood alcohol content.", "Learn : There is a whole field of study devoted to helping you become happier. Google positive psychology to learn the most currently studied ways to be more positive.", "Pamper : Remind yourself that you are awesome. Give yourself some me time - paint your nails, put on your favorite outfit, or just think of three things you do really well.", "Decide : Make one goal for this week. How about typing your notes up after class? Having and completing small goals will help you feel in control.", "Rethink : Reframing negative events as positive learning opportunites gives you an optimistic outlook. Think of a negative event. Remember how you reacted. Then imagine a healthier behavior."];
 
 //Since I was writing code to fill an unordered list, I realized that was very similar to the array that would be needed for the journalpage
 //So I made this one too
@@ -127,9 +127,10 @@ function journalPageHelper(journalDetail)
 
 function exercisePage(exerciseDetail)
 {
+  console.log("Calling function");
   //console.log("Calling");
   event.preventDefault();
-  //console.log(exerciseDetail);
+  console.log("Making page for: " + exerciseDetail);
   var nameAndDescription = exerciseDetail.split(":");
   //console.log(nameAndDescription);
   $("#exerciseName").html(nameAndDescription[0]);

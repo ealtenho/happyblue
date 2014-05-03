@@ -656,19 +656,13 @@
 
 						//This is code that is executed whenever a new page is loaded
     				$( document ).on( "pagecontainershow", $.mobile.pageContainer, function ( e, ui ) {
+    						console.log("Startup");
     						//This starts the timer on the breathe page so it is ready whenever you go to that page
     						//document.getElementById("timer").innerHTML = 1;
 
     						//This call gets the id of whatever page was just loaded since that
     						//can be unclear in the mulitpage model we are using
     						var pageId = $('body').pagecontainer('getActivePage').prop('id');
-
-    						//If the page is the breathe page, start the timer for the breathing activity
-    						if(pageId == "breathe")
-    						{
-    							console.log("start");
-    							//start();
-    						}
 
     						//This is to make the app seem more like a mobile app. For all the pages that do not require scrolling,
     						//we have disabled scrolling. This makes it so that touching the screen won't move the page up and down
