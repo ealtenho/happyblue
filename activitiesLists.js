@@ -294,6 +294,7 @@ function evaluateWrite()
   }
  }
 
+//Helper method for anytime something needs to be saved in the local storage journal array
 function journalSave(type, value)
 {
      var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
@@ -308,11 +309,7 @@ function journalSave(type, value)
         console.log("Is first");
         isFirst = true;
       }
-     //console.log("This is the last entry date: " + last);
-     //console.log(todaysDate());
-     //console.log("Is the last entry date equal: " + (last == todaysDate()));
-    // console.log(last);
-    // console.log(todaysDate());
+
      if(last != todaysDate())
      {
        hasEntry = false;
@@ -343,9 +340,17 @@ function journalSave(type, value)
     localStorage.setItem("journalDetails", JSON.stringify(currentJournal));
 }
 
+//Helper method to escape values that could cause trouble in the user's entries
 function goodSyntax(value){
- // value = encodeURI(value)
   value = value.replace(/\n/g, "<br>");
   console.log(encodeURI(value));
   return value;
+}
+
+//Provide a random maze rather than always the same
+function mazeRandom()
+{
+  var random  = Math.floor((Math.random()*6)) + 1;
+  $("#maze").html("<img src=\"maze" + random + ".png\" height=\"200\">");
+  $("body").pagecontainer( "change", "#play" );
 }

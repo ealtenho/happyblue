@@ -95,6 +95,35 @@ function timer()
   console.log(count);
 }
 
+function startExercise()
+{
+  $("#animation").html("<div style=\"text-align: center; font-size: 40px; color: #004990;\">Breathe In</div><input type=\"range\" name=\"slider-1\" id=\"slider-1\" value=\"0\" min=\"0\" max=\"7\" /><div id=\"space\"></div>");
+  count = 0;
+  counter = setInterval(function(){breathe(count, counter)}, 2000);
+}
+
+function breathe()
+{
+  count = count + 1;
+  if(count >= 12)
+  {
+    clearInterval(counter);
+    $("#animation").html("<div class=\"exercise\" style=\"margin-top: -10px\" id=\"exerciseStartButton\"><a href=\"#\" onclick=\"javascript:startExercise()\"><span class=\"shortcutSpan\" ><br><br><br>Repeat Deep Breathing</span></a></div>");
+
+    return;
+  }
+  else
+  {
+    if(count%2 == 0)
+    {
+      $("#animation").html("<div style=\"text-align: center; font-size: 40px; color: #004990;\">Breathe In</div><input type=\"range\" name=\"slider-1\" id=\"slider-1\" value=\"" + ((count/2) + 1).toString()  + "\" min=\"0\" max=\"7\" /><div id=\"space\"></div>");
+    }
+    else
+    {
+      $("#animation").html("<div style=\"text-align: center; font-size: 40px; color: #004990;\">Breathe Out</div><input type=\"range\" name=\"slider-1\" id=\"slider-1\" value=\"" + ((count/2) + 1).toString()  + "\" min=\"0\" max=\"7\" /><div id=\"space\"></div>");
+    }
+  }
+}
 
 
 

@@ -1,14 +1,4 @@
-
-//In this file we need code to
-
-//1) Evaluate the responses the user has
-
-//2) If the user has not put in valid info - we need error highlighting
-
-//3) We need a way to remove the error highlighting the next time the user clicks
-
-//4) If the input is good, we need to save that reflection to local storage to use in the journal
-
+//Evaluate the response the user has on the reflection edit and save if appropriate
 function saveToJournal() {
 
   var response1 = $("#question1").val();
@@ -37,6 +27,7 @@ function saveToJournal() {
   }
 }
 
+//Take the input from the reflection page an move it to the edit page if it does not have errors
 function submitToEdit() {
 
   var errors = false;
@@ -64,12 +55,11 @@ function submitToEdit() {
 
 }
 
+//Fill the edit journal page with text fields with the correct input
 function journalEdit(){
 
   var currentEntry = getEntry();
-  console.log("I'm going to edit: " + currentEntry);
   currentEntry = currentEntry.split("|");
-  console.log("Current Entry: " + currentEntry);
 
   var reflectArray = currentEntry[1].split("<br>");
   var activityArray = currentEntry[2].split("<br>");
@@ -91,6 +81,7 @@ function journalEdit(){
   $("body").pagecontainer( "change", "#editEntry" );
 }
 
+//Helper method to fill individual text fields
 function fillEdit(array, div, name)
 {
   $("#" + div).empty();
@@ -104,24 +95,25 @@ function fillEdit(array, div, name)
   }
 }
 
+//Find an entry in the local storage array
 function getEntry()
 {
   var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
   console.log("The journal now is :" + currentJournal);
+
   var index = getIndex(currentJournal);
-  console.log("Index = " + index);
   if(index != -1)
   {
     return currentJournal[index];
   }
 }
 
+//Get and index of an entry in the journal array
 function getIndex(currentJournal)
 {
-  console.log("Getting index for: " + currentJournal);
+  //console.log("Getting index for: " + currentJournal);
   var viewedEntry = $("#journalDate").text();
   var currentEntry;
-  console.log("I'm editing: " + viewedEntry);
 
   for(var i = 0; i < currentJournal.length; i++)
   {
@@ -129,12 +121,12 @@ function getIndex(currentJournal)
 
     if(currentEntry[0] == viewedEntry)
     {
-      console.log("Found entry");
       return i;
     }
   }
 }
 
+//Save what is edited in the journal into local storage
 function editJournal()
 {
   var currentEntry = getEntry();
@@ -151,8 +143,6 @@ function editJournal()
   }
   str += currentEntry[currentEntry.length - 1];
 
-
-
   var currentJournal = JSON.parse(localStorage.getItem("journalDetails"));
   var index = getIndex(currentJournal);
 
@@ -165,6 +155,7 @@ function editJournal()
   $("#confirmEdit").popup("open");
 }
 
+//Helper method to save edited journal input
 function saveEdit(array, name)
 {
   var output = "<br>";

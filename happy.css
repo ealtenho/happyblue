@@ -44,6 +44,38 @@ and battery life at the top **/
   background-position: 95% 45%;
 }
 
+.ui-icon-mind {
+  background-image: url("mind.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 6% 47%;
+}
+
+.ui-icon-mindWhite {
+  background-image: url("mindWhite.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 6% 47%;
+}
+
+.ui-icon-bodyWhite {
+  background-image: url("bodyWhite.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 95% 47%;
+}
+
+.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {
+background-color: transparent !important;
+}
+
+.ui-icon-bodyBlack {
+  background-image: url("body.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 95% 47%;
+}
+
 .current {
   border-style: solid !important;
   border-color: black !important;
@@ -98,6 +130,18 @@ and battery life at the top **/
 
 }
 
+.exercise {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  height: 200px;
+  width: 15%;
+  z-index: 0;
+  font-size: 24px !important;
+  text-align: center;
+
+}
+
 .shortcutFooter {
   display: inline-block;
   vertical-align: top;
@@ -134,6 +178,15 @@ background-repeat: no-repeat;
 margin-left: 50px;
 }
 
+#exerciseStartButton {
+width:200px;
+background-image: url(iconcopy.png);
+background-size: 100px;
+background-position: 45px 0px;
+background-repeat: no-repeat;
+margin-left: 45px;
+}
+
 #sendHomeButton {
 width: 60px;
 background-image: url(Envelopecopy.png);
@@ -151,9 +204,10 @@ margin-left: 70px;
 }
 
 #playChooseButton {
-background-image: url(Untitledcopy1.png);
+background-image: url(mazeGame.png);
 background-size: 50px;
 background-repeat: no-repeat;
+background-position: -3px 0px;
 margin-left: 70px;
 }
 
@@ -384,4 +438,13 @@ float: right;
 .previous {
   display:inline;
   float:left;
+}
+
+#slider-1 {
+  margin-left: 80px;
+}
+
+#space {
+  height: 100px;
+  margin-bottom: 20px;
 }

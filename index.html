@@ -92,15 +92,15 @@
 
 				<div class="descriptionCloud">
 						<p class="descriptionText"> Reflection is an effective
-						de-stressor.  A breathing exercise or game can relax you before reflecting. </p>
+						de-stressor. Deep breathing or a quick game can relax you before reflecting. </p>
 				</div>
 
 				<div class="shortcut" id="exerciseChooseButton">
-					<a href="#breathe"><span class="shortcutSpan"><br><br><br>Do Exercise</span></a>
+					<a href="#breathe"><span class="shortcutSpan"><br><br><br>Deep Breathing</span></a>
 				</div>
 
 				<div class="shortcut" id="playChooseButton">
-					<a href="#play"><span class="shortcutSpan" ><br><br><br>Play Game</span></a>
+					<a href="#" onclick="javascript:mazeRandom()"><span class="shortcutSpan" ><br><br><br>Quick Game</span></a>
 				</div>
 
 				<a href="#reflect" data-role="button" class="blueButton">Skip To Reflection</a>
@@ -129,14 +129,15 @@
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
-					<p class="descriptionText"> Take five deep breaths. </p>
+					<p class="descriptionText"> Click "Deep Breathing" to begin. Click "Next" when you are ready to reflect. </p>
 				</div>
 
-				<div id="timer" style="font-size: 40px; text-align: center;" >1</div>
+				<div id="animation">
+				<!-- <div id="timer" style="font-size: 40px; text-align: center;" >1</div> -->
+				<div class="exercise" style="margin-top: -10px" id="exerciseStartButton"><a href="#" onclick="javascript:startExercise()"><span class="shortcutSpan" ><br><br><br>Deep Breathing</span></a></div>
+			</div>
 
-
-
-				<a href="#reflect" data-role="button" class="blueButton">Next</a>
+				<a style="margin-top: -10px" href="#reflect" data-role="button" class="blueButton">Next</a>
 
 			</div>
 
@@ -165,14 +166,14 @@
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
-					<p class="descriptionText"> Play the game below. </p>
+					<p class="descriptionText"> Run your finger through the maze. When you are ready to reflect, click "Next." </p>
 				</div>
 
-						<div class="moveUp" style="margin: 0 auto; width: 200px;">
-							<img src="maze1.png" height="200">
+						<div class="moveUp" id="maze" style="margin: 0 auto; width: 200px;">
+
 						</div>
 
-						<a href="#reflect" data-role="button" class="blueButton">Next</a>
+						<a style="margin-top: 30px" href="#reflect" data-role="button" class="blueButton">Next</a>
 			</div>
 
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
@@ -206,7 +207,6 @@
 
 								<div onclick="javascript:errorOff('#writeownmessage1');">
 								<select onchange="reEvaluate('reflect1', 'writeownmessage1');" name="reflect1" class="select" data-native-menu=false id="reflect1" >
-                                <!-- When going back to "1.what makes you smile?", make sure that it goes back to "write your own"-->
 
 										<option value="0">1. What Makes You Smile?</option>
 										<option value="1">Puppies!</option>
@@ -392,9 +392,9 @@
 			</div>
 
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
-				<div data-role="controlgroup" data-type="horizontal" style="margin-left:20%; margin-bottom: 1px; margin-top: 1px;">
-						<a href="#" data-role="button" class="ui-btn-active" style="width: 75px; border-color: #e1c335 ;">Mind</a>
-						<a href="#exercises2" data-role="button" style="width: 75px; border-color: #e1c335; border-left-color: #e1c335; background-color: #fff">Body</a>
+				<div data-role="controlgroup" data-type="horizontal" style="margin-left:12%; margin-bottom: 1px; margin-top: 1px;">
+						<a href="#" data-role="button" data-iconshadow="false" class="ui-btn-active ui-icon-nodisc" data-icon="mindWhite" style="width: 75px; border-color: #e1c335 ;">Mind</a>
+						<a href="#exercises2" class="ui-icon-nodisc" data-iconshadow="false" data-role="button" data-icon="bodyBlack" data-iconpos="right" style="width: 75px; border-color: #e1c335; border-left-color: #e1c335; background-color: #fff">Body</a>
 				</div>
 			</div>
 
@@ -426,9 +426,9 @@
 			</div>
 
 			<div data-role="footer" data-position="fixed" class="whiteBackdrop">
-				<div data-role="controlgroup" data-type="horizontal" style="margin-left:20%; margin-bottom: 1px; margin-top: 1px;">
-						<a href="#exercises1" data-role="button" style="width: 75px; border-color: #e1c335 ; background-color: #fff">Mind</a>
-						<a href="#" data-role="button" class="ui-btn-active" style="width: 75px; border-color: #e1c335; border-left-color: #e1c335;">Body</a>
+				<div data-role="controlgroup" data-type="horizontal" style="margin-left:12%; margin-bottom: 1px; margin-top: 1px;">
+						<a href="#exercises1" data-role="button" data-icon="mind" style="width: 75px; border-color: #e1c335 ; background-color: #fff">Mind</a>
+						<a href="#" data-role="button" data-icon="bodyWhite" data-iconpos="right" class="ui-btn-active" style="width: 75px; border-color: #e1c335; border-left-color: #e1c335;">Body</a>
 				</div>
 			</div>
 
@@ -657,7 +657,7 @@
 						//This is code that is executed whenever a new page is loaded
     				$( document ).on( "pagecontainershow", $.mobile.pageContainer, function ( e, ui ) {
     						//This starts the timer on the breathe page so it is ready whenever you go to that page
-    						document.getElementById("timer").innerHTML = 1;
+    						//document.getElementById("timer").innerHTML = 1;
 
     						//This call gets the id of whatever page was just loaded since that
     						//can be unclear in the mulitpage model we are using
@@ -667,14 +667,14 @@
     						if(pageId == "breathe")
     						{
     							console.log("start");
-    							start();
+    							//start();
     						}
 
     						//This is to make the app seem more like a mobile app. For all the pages that do not require scrolling,
     						//we have disabled scrolling. This makes it so that touching the screen won't move the page up and down
     						//on screens that have no need to move. Especially this is important for the page with the maze, because
     						//if the screen moved whenever you tried to touch the page it would be very annoying.
-    						if(pageId == "journal" || pageId =="exercises1" || pageId == "exercises2" || pageId == "journalEntry")
+    						if(pageId == "journal" || pageId =="exercises1" || pageId == "exercises2" || pageId == "journalEntry" || pageId == "editEntry")
     						{
     							document.removeEventListener('touchmove', preventDefault, false);
     						}
