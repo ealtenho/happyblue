@@ -23,7 +23,8 @@ function saveToJournal() {
   makeLists();
   }
   else {
-    alert("Please fix the highlighted errors.");
+    //alert("Please fix the highlighted errors.");
+    $("#errorReflect").popup("open");
   }
 }
 
@@ -50,7 +51,8 @@ function submitToEdit() {
     $("body").pagecontainer( "change", "#reflectEdit" );
   }
   else {
-    alert("Please fix the highlighted errors.");
+    //alert("Please fix the highlighted errors.");
+    $("#errorReflection").popup("open");
   }
 
 }

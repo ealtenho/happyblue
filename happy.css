@@ -467,9 +467,9 @@ float: right;
 }
 
 .pop {
-  background-color: rgba(51, 136, 204, 0.7) !important;
+  background-color: #90AECC !important;
 }
 
 .errorPop {
-  background-color: rgba(232, 115, 12, 0.7) !important;
+  background-color: #E8B18C !important;
 }

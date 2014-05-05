@@ -51,7 +51,7 @@ function sendMail() {
             if(address != "" && address != "Recipient Email Address" && message != "Choose message...")
             {
                  // var send = confirm("Leave the app to send your note via email?");
-                 $("#sendConfirm").popup("open");
+                 $("#confirmSend").popup("open");
 
             }
             else
