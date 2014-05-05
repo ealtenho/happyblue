@@ -91,7 +91,7 @@
 			<div data-role="content" data-theme="a">
 
 				<div class="descriptionCloud">
-						<p class="descriptionText"> Reflection is an effective
+						<p class="descriptionText" style="padding-top: 31px;"> Reflection is an effective
 						de-stressor. Deep breathing or a quick game can relax you before reflecting. </p>
 				</div>
 
@@ -129,7 +129,7 @@
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
-					<p class="descriptionText"> Click "Deep Breathing" to begin. Click "Next" when you are ready to reflect. </p>
+					<p class="descriptionText" style="padding-top: 40px;"> Click "Deep Breathing" to begin. Click "Next" when you are ready to reflect. </p>
 				</div>
 
 				<div id="animation">
@@ -257,7 +257,7 @@
 		<!--- This is the Reflect Edit Page -->
 		<div data-role="page" data-theme="a" id="reflectEdit">
 
-			<div id="openJournalReflect" data-role="popup" style="width:270px">
+			<div id="openJournalReflect" class="pop" data-role="popup" style="width:270px">
 					<p>This reflection has been added to your journal!</p>
 					<div data-role="navbar" style="width:278px">
 						<ul>
@@ -266,6 +266,15 @@
 						</ul>
 					</div>
 				</div>
+
+				<div id="errorReflect" class="errorPop" data-role="popup" style="width:270px">
+					<p>Please correct the highlighted errors.</p>
+					<div data-role="navbar" style="width:266px">
+						<ul>
+							<li><a href="#">Ok</a></li>
+						</ul>
+					</div>
+			</div>
 
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
 			<div class="ui-grid-b" id="headerSpace">
@@ -315,6 +324,26 @@
 		<!--- This is the Send Page -->
 		<div data-role="page" data-theme="a" id="send">
 
+				 <div id="errorSend" class="errorPop" data-role="popup" style="width:270px">
+					<p>Please correct the highlighted errors.</p>
+					<div data-role="navbar" style="width:266px">
+						<ul>
+							<li><a href="#">Ok</a></li>
+						</ul>
+					</div>
+			</div>
+
+			<div id="confirmSend" class="pop" data-role="popup" style="width:270px">
+					<p>Leave the app to send your note via email?</p>
+					<div data-role="navbar" style="width:278px">
+						<ul>
+							<li><a href="javascript:sendIt()">Ok</a></li>
+							<li ><a href="#" style="margin-right: 0px;">Cancel</a></li>
+						</ul>
+					</div>
+				</div>
+
+
 					<div data-role="header" data-position="fixed" data-id="persistent-header" class="whiteBackdrop">
 						<div class="ui-grid-b" id="headerSpace">
 
@@ -326,7 +355,7 @@
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
-					<p class="descriptionText"> Friendship and gratitude increase happiness! Choose or write a note that includes text and an icon. </p>
+					<p class="descriptionText" style="padding-top: 31px;"> Friendship and gratitude increase happiness! Choose or write a note that includes text and an icon. </p>
 				</div>
 
 				<div class="email moveUp" onclick="javascript:errorOff('#email');" onblur="if(this.value== ''){ this.value='Recipient Email Address'; }">
@@ -471,6 +500,24 @@
 		<!--- This is the Write Entry Page -->
 		<div data-role="page" data-theme="a" id="write">
 
+			<div id="saveWrite" class="pop" data-role="popup" style="width:270px">
+					<p>This entry has been added to your journal!</p>
+					<div data-role="navbar" style="width:266px">
+						<ul>
+							<li><a href="#journal">Ok</a></li>
+						</ul>
+					</div>
+			</div>
+
+			<div id="errorWrite" class="errorPop" data-role="popup" style="width:270px">
+					<p>Please correct the highlighted errors.</p>
+					<div data-role="navbar" style="width:266px">
+						<ul>
+							<li><a href="#">Ok</a></li>
+						</ul>
+					</div>
+			</div>
+
 			<div data-role="header" data-position="fixed" class="whiteBackdrop">
 			<div class="ui-grid-b" id="headerSpace">
 
@@ -482,7 +529,7 @@
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
-					<p class="descriptionText"> Write whatever you feel like! This is your positivity journal. </p>
+					<p class="descriptionText" style="padding-top: 45px;"> Write whatever you feel like! This is your positivity journal. </p>
 				</div>
 					<div onclick ="$('#writeEntry').removeClass('errorDisplay');">
 					<textarea id="writeEntry" onclick="if(this.value == 'What are you happy about?'){ this.value = ''}; $('#writeEntry').removeClass('errorDisplay');" onblur="if(this.value== ''){ this.value='What are you happy about?'; }" class="entry moveUp">What are you happy about?</textarea>
@@ -515,7 +562,7 @@
 
 			<div data-role="content" data-theme="a">
 				<div class="descriptionCloud">
-					<p class="descriptionText"> Here are your HappyBlue reflections, activities and entries from this date.</p>
+					<p class="descriptionText" style="padding-top: 40px;"> Here are your HappyBlue reflections, activities and entries from this date.</p>
 				</div>
 				<div class="moveUp">
 					<h2 id="journalDate"></h2>
@@ -537,7 +584,7 @@
 		<!--- This is the Edit Journal Entry Page -->
 		<div data-role="page" data-theme="a" id="editEntry">
 
-			<div id="confirmEdit" data-role="popup" style="width:270px">
+			<div id="confirmEdit" class="pop" data-role="popup" style="width:270px">
 					<p>Your updates have been saved!</p>
 					<div data-role="navbar" style="width:278px">
 						<ul>
@@ -613,7 +660,7 @@
 
 			</div>
 
-				<div id="openJournal" data-role="popup" style="width:270px">
+				<div id="openJournal" class="pop" data-role="popup" style="width:270px">
 					<p id="text"></p>
 					<div data-role="navbar" style="width:278px">
 						<ul>

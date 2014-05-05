@@ -10,20 +10,23 @@ function errorOff(divName)
   }
 }
 
+var message;
+var address;
+var writeOwn;
+var icon = " ";
 
 function sendMail() {
 
-          var address = $('input[name=email]', '.email').val();
+          address = $('input[name=email]', '.email').val();
 
-          var message = $('#message option:selected').text();
-          var writeOwn = $('#writeown').val();
+          message = $('#message option:selected').text();
+          writeOwn = $('#writeown').val();
+
           console.log("writeOwn");
           if(writeOwn != "Or Write Your Own.")
           {
             message = writeOwn;
           }
-
-          var icon = " ";
 
           var choice = $('#icon option:selected').text();
           console.log(choice);
@@ -47,19 +50,14 @@ function sendMail() {
 
             if(address != "" && address != "Recipient Email Address" && message != "Choose message...")
             {
-                  var send = confirm("Leave the app to send your note via email?");
-                  if(send){
-                        var email = "mailto:" + address
-                               + "?cc=" + address
-                               + "&subject=" + escape("Sending You HappyBlue Thoughts")
-                               + "&body=" + message + icon;
-                        window.location.href = email;
-                        console.log("Email" + email);
-                  }
+                 // var send = confirm("Leave the app to send your note via email?");
+                 $("#sendConfirm").popup("open");
+
             }
             else
             {
-              alert("Please correct the highlighted errors.");
+              //alert("Please correct the highlighted errors.");
+              $("#errorSend").popup("open");
               if(address == "" || address == "Recipient Email Address")
               {
                 $('input[name=email]', '.email').addClass("errorDisplay");
@@ -70,6 +68,17 @@ function sendMail() {
                 $('#message-button').addClass("errorDisplayButton");
               }
             }
+}
+
+function sendIt()
+{
+  var email = "mailto:" + address
+                               + "?cc=" + address
+                               + "&subject=" + escape("Sending You HappyBlue Thoughts")
+                               + "&body=" + message + icon;
+                        window.location.href = email;
+                        console.log("Email" + email);
+
 }
 
 var count = 0;
@@ -99,7 +108,7 @@ function startExercise()
 {
   $("#animation").html("<div style=\"text-align: center; font-size: 40px; color: #004990;\">Breathe In</div><input type=\"range\" name=\"slider-1\" id=\"slider-1\" value=\"0\" min=\"0\" max=\"7\" /><div id=\"space\"></div>");
   count = 0;
-  counter = setInterval(function(){breathe(count, counter)}, 2000);
+  counter = setInterval(function(){breathe(count, counter)}, 4000);
 }
 
 function breathe()

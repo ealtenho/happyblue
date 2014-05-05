@@ -465,3 +465,11 @@ float: right;
   height: 100px;
   margin-bottom: 20px;
 }
+
+.pop {
+  background-color: rgba(51, 136, 204, 0.7) !important;
+}
+
+.errorPop {
+  background-color: rgba(232, 115, 12, 0.7) !important;
+}
