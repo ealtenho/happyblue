@@ -92,7 +92,7 @@ function fillEdit(array, div, name)
   {
     if(array[i].replace(/\s/g, "").length > 0)
     {
-     $("#" + div).append("<input type=\"text\" id=\"" + name + i + "\" value = \"" + array[i] + "\"></input><br>");
+     $("#" + div).append("<input type=\"text\" id=\"" + name + i + "\" value = \"" + parseDisplay(array[i]) + "\"></input><br>");
     }
   }
 }
