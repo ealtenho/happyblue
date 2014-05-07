@@ -351,14 +351,18 @@ function journalSave(type, value)
 function goodSyntax(value){
   value = value.replace(/\n/g, "<br>");
  // value = value.replace(/!/g, ".");
+ value = value.replace(/"/g, "~!!");
   value = value.replace(/'/g, "~");
+
   console.log(encodeURI(value));
   return value;
 }
 
 function parseDisplay(value){
   console.log("Before value: " + value);
+  value = value.replace(/~!!/g, "\"");
   value = value.replace(/~/g, "'");
+
   return value;
 }
 
