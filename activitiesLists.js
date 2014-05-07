@@ -119,10 +119,10 @@ function journalPageHelper(journalDetail)
 {
   var journalDetails = journalDetail.split("|");
   //console.log(nameAndDescription);
-  $("#journalDate").html(journalDetails[0]);
-  $("#reflectionData").html(journalDetails[1]);
-  $("#activityData").html(journalDetails[2]);
-  $("#writingData").html(journalDetails[3]);
+  $("#journalDate").html(parseDisplay(journalDetails[0]));
+  $("#reflectionData").html(parseDisplay(journalDetails[1]));
+  $("#activityData").html(parseDisplay(journalDetails[2]));
+  $("#writingData").html(parseDisplay(journalDetails[3]));
 }
 
 function exercisePage(exerciseDetail)
@@ -350,7 +350,15 @@ function journalSave(type, value)
 //Helper method to escape values that could cause trouble in the user's entries
 function goodSyntax(value){
   value = value.replace(/\n/g, "<br>");
+ // value = value.replace(/!/g, ".");
+  value = value.replace(/'/g, "~");
   console.log(encodeURI(value));
+  return value;
+}
+
+function parseDisplay(value){
+  console.log("Before value: " + value);
+  value = value.replace(/~/g, "'");
   return value;
 }
 
