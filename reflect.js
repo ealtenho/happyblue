@@ -63,6 +63,8 @@ function journalEdit(){
   var currentEntry = getEntry();
   currentEntry = currentEntry.split("|");
 
+  $("#journalDate2").html(parseDisplay(currentEntry[0]));
+
   var reflectArray = currentEntry[1].split("<br>");
   var activityArray = currentEntry[2].split("<br>");
   var writingArray = currentEntry[3].split("<br>");
